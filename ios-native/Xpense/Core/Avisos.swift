@@ -1,0 +1,36 @@
+// Avisos.swift — notificaciones locales con tono amable. Un aviso por nivel por periodo.
+import Foundation
+import UserNotifications
+
+enum Avisos {
+    static func pedirPermiso() async {
+        _ = try? await UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge])
+    }
+
+    /// Notifica solo si el nivel subió respecto del último aviso de este periodo.
+    static func evaluar(_ estado: EstadoCategoria) {
+        guard estado.nivel == .cerca || estado.nivel == .superado else { return }
+        let cat = estado.categoria
+        let clave = "aviso.\(cat.nombre).\(MotorPresupuesto.clavePeriodo(cat.periodoEnum))"
+        let ud = UserDefaults(suiteName: Compartido.appGroup)
+        let previo = ud?.integer(forKey: clave) ?? 0
+        guard estado.nivel.rawValue > previo else { return }
+        ud?.set(estado.nivel.rawValue, forKey: clave)
+
+        let contenido = UNMutableNotificationContent()
+        let limite = cat.limiteMonto ?? 0
+        let periodoTxt = cat.periodoEnum == .semanal ? "esta semana" : "este mes"
+        if estado.nivel == .cerca {
+            contenido.title = "Te acercas al límite de \(cat.nombre)"
+            contenido.body = "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Aún hay espacio — respira."
+        } else {
+            contenido.title = "Superaste el límite de \(cat.nombre)"
+            contenido.body = "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Sin culpa: obsérvalo y sigue."
+        }
+        contenido.sound = .default
+        let req = UNNotificationRequest(identifier: clave + ".\(estado.nivel.rawValue)",
+                                        content: contenido, trigger: nil)
+        UNUserNotificationCenter.current().add(req)
+    }
+}
