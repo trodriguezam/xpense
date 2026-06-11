@@ -3,19 +3,31 @@ import Foundation
 import SwiftData
 
 enum Persistencia {
-    static let contenedor: ModelContainer = {
+    static let contenedor: ModelContainer = crearContenedor()
+
+    /// Intenta el modo ideal (App Group + CloudKit) y degrada con calma si algo falla,
+    /// para que la app siga abriendo aunque iCloud/CloudKit no esté disponible.
+    private static func crearContenedor() -> ModelContainer {
         let esquema = Schema([Categoria.self, Transaccion.self])
-        let config = ModelConfiguration(
-            schema: esquema,
-            groupContainer: .identifier(Compartido.appGroup),
-            cloudKitDatabase: .automatic
-        )
-        do {
-            return try ModelContainer(for: esquema, configurations: [config])
-        } catch {
-            fatalError("No se pudo crear el contenedor de datos: \(error)")
-        }
-    }()
+
+        // 1) Ideal: datos en el App Group (los lee el widget) + sync con iCloud.
+        let conNube = ModelConfiguration(schema: esquema,
+                                         groupContainer: .identifier(Compartido.appGroup),
+                                         cloudKitDatabase: .automatic)
+        if let c = try? ModelContainer(for: esquema, configurations: [conNube]) { return c }
+
+        // 2) Sin CloudKit, pero aún en el App Group: el widget sigue viendo los datos.
+        let soloGrupo = ModelConfiguration(schema: esquema,
+                                           groupContainer: .identifier(Compartido.appGroup),
+                                           cloudKitDatabase: .none)
+        if let c = try? ModelContainer(for: esquema, configurations: [soloGrupo]) { return c }
+
+        // 3) Último recurso: almacenamiento local de la app (sin sync ni widget).
+        let local = ModelConfiguration(schema: esquema)
+        if let c = try? ModelContainer(for: esquema, configurations: [local]) { return c }
+
+        fatalError("No se pudo crear el contenedor de datos en ningún modo.")
+    }
 
     /// Categorías base pensadas para Chile. Se crean solo la primera vez.
     static func sembrarSiHaceFalta(_ contexto: ModelContext) {

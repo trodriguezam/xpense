@@ -3,7 +3,7 @@ import SwiftUI
 
 enum Compartido {
     /// Debe calzar con los entitlements de ambos targets.
-    static let appGroup = "group.cl.tuequipo.xpense"
+    static let appGroup = "group.cl.trodriguezam.xpense"
     static let claveSnapshot = "widget_snapshot"
 }
 

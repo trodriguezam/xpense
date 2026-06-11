@@ -17,8 +17,10 @@ struct RootView: View {
         }
         .task {
             Persistencia.sembrarSiHaceFalta(contexto)
-            await Avisos.pedirPermiso()
+            // Poblar el widget de inmediato: no debe quedar a la espera de que el
+            // usuario responda el diálogo de permiso de notificaciones.
             SnapshotWidget.escribir(contexto: contexto)
+            await Avisos.pedirPermiso()
         }
     }
 }

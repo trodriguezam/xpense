@@ -6,7 +6,7 @@ options:
   createIntermediateGroups: true
 settings:
   base:
-    DEVELOPMENT_TEAM: ""            # <- tu Team ID (cuenta pagada)
+    DEVELOPMENT_TEAM: "9T6BFX3WVY"            # <- Team ID (Manuel Tagle, cuenta pagada)
     SWIFT_VERSION: "5.9"
     CODE_SIGN_STYLE: Automatic
     CURRENT_PROJECT_VERSION: 1
@@ -18,14 +18,13 @@ targets:
     sources: [Xpense, Shared]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: cl.tuequipo.xpense   # <- cámbialo por tu dominio
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        PRODUCT_BUNDLE_IDENTIFIER: cl.trodriguezam.xpense   # <- cámbialo por tu dominio
     entitlements:
       path: Xpense/Xpense.entitlements
       properties:
-        com.apple.security.application-groups: [group.cl.tuequipo.xpense]
+        com.apple.security.application-groups: [group.cl.trodriguezam.xpense]
         com.apple.developer.icloud-services: [CloudKit]
-        com.apple.developer.icloud-container-identifiers: [iCloud.cl.tuequipo.xpense]
+        com.apple.developer.icloud-container-identifiers: [iCloud.cl.trodriguezam.xpense]
     info:
       path: Xpense/Info.plist
       properties:
@@ -33,6 +32,12 @@ targets:
         CFBundleDevelopmentRegion: es_CL
         UIBackgroundModes: [remote-notification]   # sync silencioso de CloudKit
         ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}                         # launch screen nativo (evita modo escalado)
+        UIRequiresFullScreen: true                 # app de iPhone enfocada (sin multitarea iPad)
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
     dependencies:
       - target: XpenseWidget
         embed: true
@@ -42,11 +47,11 @@ targets:
     sources: [XpenseWidget, Shared]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: cl.tuequipo.xpense.widget
+        PRODUCT_BUNDLE_IDENTIFIER: cl.trodriguezam.xpense.widget
     entitlements:
       path: XpenseWidget/XpenseWidget.entitlements
       properties:
-        com.apple.security.application-groups: [group.cl.tuequipo.xpense]
+        com.apple.security.application-groups: [group.cl.trodriguezam.xpense]
     info:
       path: XpenseWidget/Info.plist
       properties:
