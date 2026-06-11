@@ -6,7 +6,7 @@ import SwiftData
 
 struct RegistrarGastoIntent: AppIntent {
     static var title: LocalizedStringResource = "Registrar gasto"
-    static var description = IntentDescription("Registra un gasto en xpense. Pensado para la automatización de Apple Pay en Atajos.")
+    static var description = IntentDescription("Registra un gasto en xpense. Pensado para la automatización de pagos en Atajos.")
     static var openAppWhenRun: Bool = false   // corre en segundo plano: no interrumpe
 
     @Parameter(title: "Monto (CLP)") var monto: Double
