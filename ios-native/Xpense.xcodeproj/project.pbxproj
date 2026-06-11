@@ -19,6 +19,7 @@
 		7E971A24DD4683DCBCFA3A07 /* XpenseWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AF81D81F3E82AFF365A165AC /* XpenseWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9913E2348A601C35852830FE /* AgregarGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046703222621730FCAB3B73F /* AgregarGastoView.swift */; };
 		A1E3B4EEFF1CD3F0AB110F20 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0310C89270CB705AB950D /* AjustesView.swift */; };
+		B82B0E7E5341A396D1B25BC4 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8B24F166E655DE7E1F81C967 /* AppIcon.icon */; };
 		BBD895B0E1FE831E386C684A /* TransaccionesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86FF000097B29002D87CDBA /* TransaccionesView.swift */; };
 		CDD99EB09B4871E13416FA45 /* RegistrarGastoIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004D270A1A0D7B172BC328B /* RegistrarGastoIntent.swift */; };
 		CE574426BFC9F924AF38CC23 /* Modelos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC975AA40FCE931F8E6D3AD6 /* Modelos.swift */; };
@@ -61,6 +62,7 @@
 		66F34E409525145482F225F8 /* Xpense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xpense.entitlements; sourceTree = "<group>"; };
 		72E4014E4901985350FD5E82 /* AutoCategorizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategorizador.swift; sourceTree = "<group>"; };
 		89117E545B670D5232F1157A /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		8B24F166E655DE7E1F81C967 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		8D89559FA41116F4120DD83A /* SnapshotWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotWidget.swift; sourceTree = "<group>"; };
 		9004D270A1A0D7B172BC328B /* RegistrarGastoIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrarGastoIntent.swift; sourceTree = "<group>"; };
 		98BE6DB96F3058F89736E644 /* XpenseWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XpenseWidget.entitlements; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		62F89FFDD3CB2FC8A370FF7F /* Xpense */ = {
 			isa = PBXGroup;
 			children = (
+				8B24F166E655DE7E1F81C967 /* AppIcon.icon */,
 				DA114CAB5168942E0FD4DD18 /* Info.plist */,
 				66F34E409525145482F225F8 /* Xpense.entitlements */,
 				9ED7F5847124AB72E7A3E2D4 /* XpenseApp.swift */,
@@ -197,6 +200,7 @@
 			buildConfigurationList = B27006326217D0C35FB58B0C /* Build configuration list for PBXNativeTarget "Xpense" */;
 			buildPhases = (
 				C387EAAB7372A49C6A9B3A91 /* Sources */,
+				8FC8AE7431620A138D896516 /* Resources */,
 				87D32436E22629E26145DD52 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -249,6 +253,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FC8AE7431620A138D896516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B82B0E7E5341A396D1B25BC4 /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7B17D4BB9653982B84907E5E /* Sources */ = {

@@ -32,7 +32,7 @@ struct DetalleCategoriaView: View {
                         TalloProgreso(fraccion: estado.fraccion, nivel: estado.nivel)
                     }
                 }
-                .listRowBackground(Color.white)
+                .listRowBackground(Paleta.superficie)
             } header: {
                 Text("Gastado \(categoria.periodoEnum == .semanal ? "esta semana" : "este mes")")
             }

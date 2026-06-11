@@ -1,5 +1,6 @@
 // Shared.swift — código compartido entre la app y el widget (vía App Group).
 import SwiftUI
+import UIKit
 
 enum Compartido {
     /// Debe calzar con los entitlements de ambos targets.
@@ -8,28 +9,43 @@ enum Compartido {
 }
 
 // MARK: - Paleta "mañana en el sur"
-extension Color {
-    init(hex: String) {
+extension UIColor {
+    convenience init(hex: String) {
         var s = hex.trimmingCharacters(in: .alphanumerics.inverted)
         if s.count == 3 { s = s.map { "\($0)\($0)" }.joined() }
         var v: UInt64 = 0
         Scanner(string: s).scanHexInt64(&v)
-        self.init(.sRGB,
-                  red:   Double((v >> 16) & 0xFF) / 255,
-                  green: Double((v >> 8)  & 0xFF) / 255,
-                  blue:  Double(v & 0xFF) / 255)
+        self.init(red:   CGFloat((v >> 16) & 0xFF) / 255,
+                  green: CGFloat((v >> 8)  & 0xFF) / 255,
+                  blue:  CGFloat(v & 0xFF) / 255,
+                  alpha: 1)
+    }
+}
+
+extension Color {
+    init(hex: String) { self.init(uiColor: UIColor(hex: hex)) }
+
+    /// Color que se resuelve solo según el modo (claro/oscuro) del sistema,
+    /// para que toda la app —y el widget— sea coherente en ambos.
+    init(claro: String, oscuro: String) {
+        self.init(uiColor: UIColor { traits in
+            UIColor(hex: traits.userInterfaceStyle == .dark ? oscuro : claro)
+        })
     }
 }
 
 enum Paleta {
-    static let bruma    = Color(hex: "#F6F4EE")   // fondo
-    static let arena    = Color(hex: "#E7E0D2")   // superficies suaves
-    static let musgo    = Color(hex: "#5E7561")   // primario
-    static let salvia   = Color(hex: "#A9BFA8")   // secundario
-    static let corteza  = Color(hex: "#2F3A2E")   // texto
-    static let piedra   = Color(hex: "#7C8577")   // texto secundario
-    static let cobre    = Color(hex: "#B5704F")   // "cerca del límite"
-    static let teja     = Color(hex: "#9C4F35")   // "límite superado" (cálido, no rojo)
+    // Cada color tiene su variante de día y de noche, conservando la identidad
+    // "mañana en el sur" (bruma, arena, musgo, cobre).
+    static let bruma      = Color(claro: "#F6F4EE", oscuro: "#161A15")   // fondo
+    static let arena      = Color(claro: "#E7E0D2", oscuro: "#2B312B")   // superficies suaves / pistas
+    static let superficie = Color(claro: "#FFFFFF", oscuro: "#1F241E")   // tarjetas y filas
+    static let musgo      = Color(claro: "#5E7561", oscuro: "#8FAE91")   // primario
+    static let salvia     = Color(claro: "#A9BFA8", oscuro: "#7E997E")   // secundario
+    static let corteza    = Color(claro: "#2F3A2E", oscuro: "#ECEFE8")   // texto
+    static let piedra     = Color(claro: "#7C8577", oscuro: "#9BA89A")   // texto secundario
+    static let cobre      = Color(claro: "#B5704F", oscuro: "#CB8866")   // "cerca del límite"
+    static let teja       = Color(claro: "#9C4F35", oscuro: "#C76A4B")   // "límite superado" (cálido, no rojo)
 }
 
 // MARK: - Snapshot que la app escribe y el widget lee

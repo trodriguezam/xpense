@@ -2,7 +2,7 @@ import { ExpoConfig } from "expo/config";
 
 // Cambia "cl.tuequipo" por tu dominio invertido real.
 const config: ExpoConfig = {
-  name: "xpense",
+  name: "Xpense",
   slug: "xpense",
   version: "1.0.0",
   scheme: "xpense",                     // habilita xpense:// para la automatización de Atajos

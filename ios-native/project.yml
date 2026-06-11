@@ -19,6 +19,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: cl.trodriguezam.xpense   # <- cámbialo por tu dominio
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon          # usa Xpense/AppIcon.icon (Icon Composer)
     entitlements:
       path: Xpense/Xpense.entitlements
       properties:
@@ -28,7 +29,7 @@ targets:
     info:
       path: Xpense/Info.plist
       properties:
-        CFBundleDisplayName: xpense
+        CFBundleDisplayName: Xpense
         CFBundleDevelopmentRegion: es_CL
         UIBackgroundModes: [remote-notification]   # sync silencioso de CloudKit
         ITSAppUsesNonExemptEncryption: false
@@ -55,6 +56,6 @@ targets:
     info:
       path: XpenseWidget/Info.plist
       properties:
-        CFBundleDisplayName: xpense
+        CFBundleDisplayName: Xpense
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension

@@ -1,0 +1,20 @@
+{
+  "fill" : { "solid" : "srgb:0.16863,0.19216,0.16863,1.00000" },
+  "groups" : [
+    {
+      "lighting" : "individual",
+      "specular" : true,
+      "translucency" : { "enabled" : true, "value" : 0.5 },
+      "shadow" : { "kind" : "neutral", "opacity" : 0.5 },
+      "layers" : [
+        { "image-name" : "wave4.svg", "name" : "Onda 4 — Musgo oscuro (frente)", "glass" : true },
+        { "image-name" : "wave3.svg", "name" : "Onda 3 — Musgo medio", "glass" : true },
+        { "image-name" : "wave2.svg", "name" : "Onda 2 — Musgo", "glass" : true },
+        { "image-name" : "wave1.svg", "name" : "Onda 1 — Arena (fondo)", "glass" : true }
+      ]
+    }
+  ],
+  "supported-platforms" : {
+    "squares" : "shared"
+  }
+}

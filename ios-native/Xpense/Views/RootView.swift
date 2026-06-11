@@ -66,7 +66,7 @@ struct IconoCategoria: View {
 extension View {
     func tarjeta() -> some View {
         self.padding(16)
-            .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(.white))
+            .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Paleta.superficie))
             .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .strokeBorder(Paleta.arena, lineWidth: 1))
     }
