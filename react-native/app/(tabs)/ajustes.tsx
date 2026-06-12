@@ -6,7 +6,7 @@ import { pedirPermiso } from "@/lib/avisos";
 
 const PASOS = [
   "Abre Atajos → pestaña Automatización → +.",
-  'Elige el gatillo "Transacción" y selecciona tus tarjetas de Apple Pay.',
+  'Elige el gatillo "Wallet" y selecciona tus tarjetas de Apple Pay.',
   'Marca "Ejecutar inmediatamente" (sin preguntar).',
   'Agrega la acción "Abrir URL".',
   "Pega esta URL e inserta las variables de la transacción donde corresponde:",

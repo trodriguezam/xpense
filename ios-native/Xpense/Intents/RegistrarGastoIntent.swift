@@ -1,5 +1,5 @@
 // RegistrarGastoIntent.swift — el corazón de la captura "Apple Pay" en Chile.
-// La automatización de Atajos (gatillo "Transacción") llama esta acción en segundo plano
+// La automatización de Atajos (gatillo "Wallet") llama esta acción en segundo plano
 // con el monto y el comercio que entrega Wallet al pagar con Apple Pay.
 import AppIntents
 import SwiftData

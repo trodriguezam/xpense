@@ -18,7 +18,7 @@ bruma, arena, musgo, cobre) y las mismas reglas de negocio:
 
 Apple **no** expone los pagos de Apple Pay a apps de terceros en Chile: FinanceKit solo
 funciona con Apple Card en EE.UU. La vía soportada es la automatización de **Atajos** con el
-gatillo **"Transacción"** (iOS 17+): cada vez que pagas con Apple Pay, Atajos recibe el
+gatillo **"Wallet"** (iOS 17+): cada vez que pagas con Apple Pay, Atajos recibe el
 comercio y el monto, y se los pasa a xpense. La app categoriza automáticamente según el
 comercio (Jumbo → Supermercado, Copec → Bencina, etc.), revisa tus límites, actualiza el
 widget y te avisa con calma si te acercas a una cuota.

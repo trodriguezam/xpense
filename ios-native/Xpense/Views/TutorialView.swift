@@ -18,7 +18,7 @@ struct TutorialView: View {
               detalle: String(localized: "Xpense usa la app Atajos de Apple para enterarse de cada pago con Apple Pay y registrarlo en segundo plano, sin abrir la app.\n\nConfigurarlo toma unos minutos y se hace una sola vez.")),
         .init(icono: "plus.circle.fill",
               titulo: String(localized: "1 · Crea la automatización"),
-              detalle: String(localized: "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Transacción.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente.")),
+              detalle: String(localized: "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Wallet.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente.")),
         .init(icono: "square.and.pencil",
               titulo: String(localized: "2 · Crea el atajo"),
               detalle: String(localized: "Al tocar Siguiente, Atajos te pregunta qué ejecutar.\n\nElige Nuevo atajo en blanco.\n\nEn el editor, busca la acción Registrar gasto (aparece bajo Xpense) y agrégala.")),

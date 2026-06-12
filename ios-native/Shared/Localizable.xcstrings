@@ -110,13 +110,13 @@
         }
       }
     },
-    "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Transacción.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente." : {
+    "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Wallet.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente." : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Open Shortcuts and go to the Automation tab.\n\nTap + (New Automation) and choose the Transaction trigger.\n\nSelect your Apple Pay cards and check Run Immediately."
+            "value" : "Open Shortcuts and go to the Automation tab.\n\nTap + (New Automation) and choose the Wallet trigger.\n\nSelect your Apple Pay cards and check Run Immediately."
           }
         }
       }

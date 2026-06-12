@@ -48,7 +48,7 @@ recompilar en EAS** si cambias algo nativo (el widget, plugins, app.config.ts).
 
 Esta versión usa el **URL scheme** `xpense://` (la guía también está en la app, en Ajustes):
 
-1. **Atajos** → **Automatización** → **+** → gatillo **Transacción** → tus tarjetas →
+1. **Atajos** → **Automatización** → **+** → gatillo **Wallet** → tus tarjetas →
    **Ejecutar inmediatamente**.
 2. Acción **Abrir URL** con:
    `xpense://agregar?monto=[Cantidad]&comercio=[Comerciante]`

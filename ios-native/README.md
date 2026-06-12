@@ -35,7 +35,7 @@ desarrollador en Ajustes → General → VPN y administración de dispositivos.
 En el iPhone (requiere haber abierto xpense al menos una vez):
 
 1. **Atajos** → **Automatización** → **+**.
-2. Gatillo **Transacción** → elige tus tarjetas de Apple Pay → **Ejecutar inmediatamente**.
+2. Gatillo **Wallet** → elige tus tarjetas de Apple Pay → **Ejecutar inmediatamente**.
 3. Acción: **Registrar gasto** (aparece bajo xpense).
 4. En *Monto* inserta la variable **Cantidad** de la transacción; en *Comercio*, **Comerciante**.
 
