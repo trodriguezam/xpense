@@ -87,6 +87,7 @@ struct NuevaCategoriaView: View {
                     }
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
             .scrollContentBackground(.hidden)
             .background(Paleta.bruma)
             .navigationTitle("Nueva categoría")

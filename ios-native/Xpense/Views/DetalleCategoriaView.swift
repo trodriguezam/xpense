@@ -34,7 +34,8 @@ struct DetalleCategoriaView: View {
                 }
                 .listRowBackground(Paleta.superficie)
             } header: {
-                Text("Gastado \(categoria.periodoEnum == .semanal ? "esta semana" : "este mes")")
+                categoria.periodoEnum == .semanal
+                    ? Text("Gastado esta semana") : Text("Gastado este mes")
             }
 
             Section("Límite") {
@@ -51,9 +52,10 @@ struct DetalleCategoriaView: View {
                     }
                     .pickerStyle(.segmented)
                     VStack(alignment: .leading) {
-                        Text("Avisar al llegar al \(Int(categoria.umbralAviso * 100)) %")
+                        let pct = "\(Int(categoria.umbralAviso * 100)) %"
+                        Text("Avisar al llegar al \(pct)")
                             .font(.subheadline)
-                        Slider(value: $categoria.umbralAviso, in: 0.5...0.95, step: 0.05)
+                        Slider(value: $categoria.umbralAviso, in: 0...1, step: 0.05)
                     }
                 }
             }
@@ -66,6 +68,7 @@ struct DetalleCategoriaView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .scrollContentBackground(.hidden)
         .background(Paleta.bruma)
         .navigationTitle(categoria.nombre)

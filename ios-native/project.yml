@@ -4,6 +4,7 @@ options:
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
+  developmentLanguage: es   # idioma base; en inglés se usa Shared/Localizable.xcstrings
 settings:
   base:
     DEVELOPMENT_TEAM: "9T6BFX3WVY"            # <- Team ID (Manuel Tagle, cuenta pagada)
@@ -30,7 +31,7 @@ targets:
       path: Xpense/Info.plist
       properties:
         CFBundleDisplayName: Xpense
-        CFBundleDevelopmentRegion: es_CL
+        CFBundleDevelopmentRegion: es
         UIBackgroundModes: [remote-notification]   # sync silencioso de CloudKit
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}                         # launch screen nativo (evita modo escalado)
@@ -57,5 +58,6 @@ targets:
       path: XpenseWidget/Info.plist
       properties:
         CFBundleDisplayName: Xpense
+        CFBundleDevelopmentRegion: es
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension

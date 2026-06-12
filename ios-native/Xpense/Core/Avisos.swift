@@ -1,11 +1,25 @@
 // Avisos.swift — notificaciones locales con tono amable. Un aviso por nivel por periodo.
 import Foundation
 import UserNotifications
+import UIKit
 
 enum Avisos {
     static func pedirPermiso() async {
         _ = try? await UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound, .badge])
+    }
+
+    /// El diálogo del sistema solo aparece una vez. Si el permiso ya se decidió,
+    /// lo que corresponde es llevar al usuario a los Ajustes de la app.
+    @MainActor
+    static func revisarPermiso() async {
+        let centro = UNUserNotificationCenter.current()
+        let ajustes = await centro.notificationSettings()
+        if ajustes.authorizationStatus == .notDetermined {
+            await pedirPermiso()
+        } else if let url = URL(string: UIApplication.openSettingsURLString) {
+            _ = await UIApplication.shared.open(url)
+        }
     }
 
     /// Notifica solo si el nivel subió respecto del último aviso de este periodo.
@@ -20,13 +34,14 @@ enum Avisos {
 
         let contenido = UNMutableNotificationContent()
         let limite = cat.limiteMonto ?? 0
-        let periodoTxt = cat.periodoEnum == .semanal ? "esta semana" : "este mes"
+        let periodoTxt = cat.periodoEnum == .semanal
+            ? String(localized: "esta semana") : String(localized: "este mes")
         if estado.nivel == .cerca {
-            contenido.title = "Te acercas al límite de \(cat.nombre)"
-            contenido.body = "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Aún hay espacio — respira."
+            contenido.title = String(localized: "Te acercas al límite de \(cat.nombre)")
+            contenido.body = String(localized: "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Aún hay espacio — respira.")
         } else {
-            contenido.title = "Superaste el límite de \(cat.nombre)"
-            contenido.body = "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Sin culpa: obsérvalo y sigue."
+            contenido.title = String(localized: "Superaste el límite de \(cat.nombre)")
+            contenido.body = String(localized: "Llevas \(clp(estado.gastado)) de \(clp(limite)) \(periodoTxt). Sin culpa: obsérvalo y sigue.")
         }
         contenido.sound = .default
         let req = UNNotificationRequest(identifier: clave + ".\(estado.nivel.rawValue)",

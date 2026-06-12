@@ -6,6 +6,7 @@ struct HomeView: View {
     @Query(sort: \Transaccion.fecha, order: .reverse) private var transacciones: [Transaccion]
     @Query private var categorias: [Categoria]
     @State private var mostrarAgregar = false
+    @State private var editarTx: Transaccion?
 
     private var estados: [EstadoCategoria] {
         MotorPresupuesto.estados(contexto: contexto)
@@ -15,13 +16,11 @@ struct HomeView: View {
     private var totalMes: Int { MotorPresupuesto.totalMes(contexto: contexto) }
     private var saludo: String {
         let h = Calendar.current.component(.hour, from: .now)
-        return h < 12 ? "Buenos días" : (h < 20 ? "Buenas tardes" : "Buenas noches")
+        if h < 12 { return String(localized: "Buenos días") }
+        return h < 20 ? String(localized: "Buenas tardes") : String(localized: "Buenas noches")
     }
     private var mesActual: String {
-        let f = DateFormatter()
-        f.locale = Locale(identifier: "es_CL")
-        f.dateFormat = "MMMM"
-        return f.string(from: .now)
+        Date.now.formatted(.dateTime.month(.wide))
     }
 
     var body: some View {
@@ -84,7 +83,11 @@ struct HomeView: View {
                                 .font(.system(.title3, design: .serif).weight(.medium))
                                 .foregroundStyle(Paleta.corteza)
                             ForEach(transacciones.prefix(5)) { tx in
-                                FilaTransaccion(tx: tx)
+                                Button { editarTx = tx } label: {
+                                    FilaTransaccion(tx: tx)
+                                        .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
                             }
                         }
                         .tarjeta()
@@ -102,6 +105,7 @@ struct HomeView: View {
                 }
             }
             .sheet(isPresented: $mostrarAgregar) { AgregarGastoView() }
+            .sheet(item: $editarTx) { AgregarGastoView(transaccion: $0) }
         }
     }
 }
@@ -146,7 +150,7 @@ struct FilaTransaccion: View {
                             .font(.caption2)
                             .foregroundStyle(Paleta.salvia)
                     }
-                    Text(tx.fecha.formatted(.dateTime.day().month(.wide).locale(Locale(identifier: "es_CL"))))
+                    Text(tx.fecha.formatted(.dateTime.day().month(.wide)))
                         .font(.caption2)
                         .foregroundStyle(Paleta.piedra)
                 }

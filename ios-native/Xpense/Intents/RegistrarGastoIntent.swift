@@ -6,7 +6,7 @@ import SwiftData
 
 struct RegistrarGastoIntent: AppIntent {
     static var title: LocalizedStringResource = "Registrar gasto"
-    static var description = IntentDescription("Registra un gasto en xpense. Pensado para la automatización de pagos en Atajos.")
+    static var description = IntentDescription("Registra un gasto en Xpense. Pensado para la automatización de pagos en Atajos.")
     static var openAppWhenRun: Bool = false   // corre en segundo plano: no interrumpe
 
     @Parameter(title: "Monto (CLP)") var monto: Double
@@ -22,8 +22,11 @@ struct RegistrarGastoIntent: AppIntent {
         Persistencia.sembrarSiHaceFalta(contexto)
 
         let cats = (try? contexto.fetch(FetchDescriptor<Categoria>())) ?? []
-        let categoria = AutoCategorizador.sugerir(comercio: comercio, entre: cats)
-            ?? cats.first(where: { $0.nombre == "Otros" })
+        // Primero lo que el usuario corrigió antes para este comercio; luego las reglas.
+        let otros = AutoCategorizador.nombreLocalizado("Otros")
+        let categoria = AutoCategorizador.categoriaPrevia(comercio: comercio, contexto: contexto)
+            ?? AutoCategorizador.sugerir(comercio: comercio, entre: cats)
+            ?? cats.first(where: { $0.nombre == otros })
 
         let tx = Transaccion(monto: Int(monto.rounded()),
                              comercio: comercio.isEmpty ? "Apple Pay" : comercio,

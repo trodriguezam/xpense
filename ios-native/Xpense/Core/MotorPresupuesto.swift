@@ -65,7 +65,8 @@ enum MotorPresupuesto {
             return EstadoCategoria(categoria: categoria, gastado: g, fraccion: 0, nivel: .sinLimite)
         }
         let f = Double(g) / Double(limite)
-        let nivel: Nivel = f >= 1.0 ? .superado : (f >= categoria.umbralAviso ? .cerca : .conCalma)
+        // g > 0 evita avisar "cerca" sin haber gastado nada cuando el umbral es 0 %.
+        let nivel: Nivel = f >= 1.0 ? .superado : (f >= categoria.umbralAviso && g > 0 ? .cerca : .conCalma)
         return EstadoCategoria(categoria: categoria, gastado: g, fraccion: f, nivel: nivel)
     }
 
@@ -79,8 +80,12 @@ enum MotorPresupuesto {
     }
 
     static func mensajeGeneral(_ estados: [EstadoCategoria]) -> String {
-        if estados.contains(where: { $0.nivel == .superado }) { return "Un límite se pasó — sin drama, mañana es otro día." }
-        if estados.contains(where: { $0.nivel == .cerca })    { return "Atento por aquí: hay categorías cerca de su límite." }
-        return "Vas con calma este mes."
+        if estados.contains(where: { $0.nivel == .superado }) {
+            return String(localized: "Un límite se pasó — sin drama, mañana es otro día.")
+        }
+        if estados.contains(where: { $0.nivel == .cerca }) {
+            return String(localized: "Atento por aquí: hay categorías cerca de su límite.")
+        }
+        return String(localized: "Vas con calma este mes.")
     }
 }

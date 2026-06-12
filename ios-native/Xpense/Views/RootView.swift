@@ -3,24 +3,37 @@ import SwiftData
 
 struct RootView: View {
     @Environment(\.modelContext) private var contexto
+    @AppStorage("tutorialVisto") private var tutorialVisto = false
+    @State private var mostrarTutorial = false
 
     var body: some View {
         TabView {
             HomeView()
                 .tabItem { Label("Inicio", systemImage: "leaf.fill") }
             TransaccionesView()
-                .tabItem { Label("Movimientos", systemImage: "list.bullet") }
+                .tabItem { Label("Gastos", systemImage: "list.bullet") }
             CategoriasView()
                 .tabItem { Label("Categorías", systemImage: "circle.grid.2x2.fill") }
             AjustesView()
                 .tabItem { Label("Ajustes", systemImage: "gearshape.fill") }
+        }
+        .sheet(isPresented: $mostrarTutorial, onDismiss: {
+            tutorialVisto = true
+            // El permiso se pide recién al cerrar el tutorial, para no taparlo.
+            Task { await Avisos.pedirPermiso() }
+        }) {
+            TutorialView()
         }
         .task {
             Persistencia.sembrarSiHaceFalta(contexto)
             // Poblar el widget de inmediato: no debe quedar a la espera de que el
             // usuario responda el diálogo de permiso de notificaciones.
             SnapshotWidget.escribir(contexto: contexto)
-            await Avisos.pedirPermiso()
+            if !tutorialVisto {
+                mostrarTutorial = true
+            } else {
+                await Avisos.pedirPermiso()
+            }
         }
     }
 }

@@ -6,7 +6,9 @@ import SwiftData
 enum Periodo: String, CaseIterable, Identifiable {
     case semanal, mensual
     var id: String { rawValue }
-    var etiqueta: String { self == .semanal ? "Semanal" : "Mensual" }
+    var etiqueta: String {
+        self == .semanal ? String(localized: "Semanal") : String(localized: "Mensual")
+    }
 }
 
 @Model

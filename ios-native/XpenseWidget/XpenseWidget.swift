@@ -46,7 +46,7 @@ struct VistaWidget: View {
             } else {
                 VStack(spacing: 4) {
                     Image(systemName: "leaf").foregroundStyle(Paleta.salvia)
-                    Text("Abre xpense para empezar")
+                    Text("Abre Xpense para empezar")
                         .font(.caption2).multilineTextAlignment(.center)
                         .foregroundStyle(Paleta.piedra)
                 }
@@ -57,7 +57,7 @@ struct VistaWidget: View {
 
     private func chico(_ s: Snapshot) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Label("xpense", systemImage: "leaf.fill")
+            Label("Xpense", systemImage: "leaf.fill")
                 .font(.caption2.weight(.semibold)).foregroundStyle(Paleta.musgo)
             Text(clp(s.totalMes))
                 .font(.system(.title3, design: .serif).weight(.medium))
@@ -73,7 +73,7 @@ struct VistaWidget: View {
     private func mediano(_ s: Snapshot) -> some View {
         VStack(alignment: .leading, spacing: 7) {
             HStack {
-                Label("xpense", systemImage: "leaf.fill")
+                Label("Xpense", systemImage: "leaf.fill")
                     .font(.caption.weight(.semibold)).foregroundStyle(Paleta.musgo)
                 Spacer()
                 Text("\(clp(s.totalMes)) este mes")
