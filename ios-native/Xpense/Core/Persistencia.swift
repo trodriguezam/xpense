@@ -8,7 +8,8 @@ enum Persistencia {
     /// Intenta el modo ideal (App Group + CloudKit) y degrada con calma si algo falla,
     /// para que la app siga abriendo aunque iCloud/CloudKit no esté disponible.
     private static func crearContenedor() -> ModelContainer {
-        let esquema = Schema([Categoria.self, Transaccion.self, ReglaAprendida.self, Tarjeta.self])
+        let esquema = Schema([Categoria.self, Transaccion.self, ReglaAprendida.self,
+                              Tarjeta.self, Grupo.self, Persona.self])
 
         // 1) Ideal: datos en el App Group (los lee el widget) + sync con iCloud.
         let conNube = ModelConfiguration(schema: esquema,

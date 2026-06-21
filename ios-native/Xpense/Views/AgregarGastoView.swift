@@ -13,14 +13,30 @@ struct AgregarGastoView: View {
     @State private var montoTexto = ""
     @State private var comercio = ""
     @State private var comercioOriginal = ""        // nombre crudo al abrir (para el alias)
-    @State private var tarjetaTexto = ""
+    @State private var tarjeta: Tarjeta?
     @State private var fecha = Date.now
     @State private var categoria: Categoria?
     @State private var sugeridaAuto = false
     @State private var confirmarBorrado = false
+    @State private var aporte: AporteOpcion = .porDefecto
+
+    /// Override del aporte al pozo para este gasto. `porDefecto` respeta la tarjeta.
+    private enum AporteOpcion: Hashable {
+        case porDefecto, si, no
+        var valor: Bool? {
+            switch self {
+            case .porDefecto: return nil
+            case .si: return true
+            case .no: return false
+            }
+        }
+        init(_ v: Bool?) { self = v == nil ? .porDefecto : (v! ? .si : .no) }
+    }
 
     private var monto: Int { Int(montoTexto.filter(\.isNumber)) ?? 0 }
     private var editando: Bool { transaccion != nil }
+    /// La tarjeta elegida pertenece a una persona de un grupo.
+    private var tarjetaEnGrupo: Bool { tarjeta?.dueno?.grupo != nil }
 
     var body: some View {
         NavigationStack {
@@ -62,20 +78,37 @@ struct AgregarGastoView: View {
                 }
 
                 Section {
-                    HStack {
-                        TextField("Tarjeta (opcional)", text: $tarjetaTexto)
-                        if !tarjetas.isEmpty {
-                            Menu {
-                                Button("Ninguna") { tarjetaTexto = "" }
-                                ForEach(tarjetas) { t in
-                                    Button(t.nombre) { tarjetaTexto = t.nombre }
-                                }
-                            } label: {
-                                Image(systemName: "creditcard").foregroundStyle(Paleta.musgo)
+                    if tarjetas.isEmpty {
+                        Label {
+                            Text("Aún no tienes tarjetas. Agrégalas en la pestaña Tarjetas, o aparecen solas al pagar con Apple Pay.")
+                                .font(.subheadline).foregroundStyle(Paleta.piedra)
+                        } icon: {
+                            Image(systemName: "creditcard").foregroundStyle(Paleta.piedra)
+                        }
+                    } else {
+                        Picker("Tarjeta", selection: $tarjeta) {
+                            Text("Elige una tarjeta").tag(Tarjeta?.none)
+                            ForEach(tarjetas) { t in
+                                Label(t.nombre, systemImage: "creditcard.fill").tag(Optional(t))
                             }
                         }
                     }
                 } header: { Text("Tarjeta") }
+
+                if tarjetaEnGrupo {
+                    Section {
+                        Picker("Aporta al pozo", selection: $aporte) {
+                            Text("Según la tarjeta").tag(AporteOpcion.porDefecto)
+                            Text("Sí").tag(AporteOpcion.si)
+                            Text("No").tag(AporteOpcion.no)
+                        }
+                        .pickerStyle(.segmented)
+                    } header: { Text("Pozo del grupo") } footer: {
+                        let pred = (tarjeta?.aportaAlPozoPorDefecto ?? false)
+                            ? String(localized: "aporta") : String(localized: "no aporta")
+                        Text("Por defecto, esta tarjeta \(pred) al pozo. Puedes cambiarlo solo para este gasto.")
+                    }
+                }
 
                 if editando {
                     Section {
@@ -94,37 +127,42 @@ struct AgregarGastoView: View {
                     Button("Cerrar") { cerrar() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Guardar") { guardar() }.disabled(monto <= 0)
+                    Button("Guardar") { guardar() }.disabled(monto <= 0 || tarjeta == nil)
                 }
             }
-            .confirmationDialog("¿Eliminar este gasto?", isPresented: $confirmarBorrado, titleVisibility: .visible) {
+            .alert("¿Eliminar este gasto?", isPresented: $confirmarBorrado) {
                 Button("Eliminar", role: .destructive) { eliminar() }
                 Button("Cancelar", role: .cancel) {}
+            } message: {
+                Text("Esta acción no se puede deshacer.")
             }
             .onAppear {
                 guard let tx = transaccion, montoTexto.isEmpty else { return }
                 montoTexto = String(tx.monto)
                 comercio = tx.comercio
                 comercioOriginal = tx.comercio
-                tarjetaTexto = tx.tarjeta?.nombre ?? ""
+                tarjeta = tx.tarjeta
                 fecha = tx.fecha
                 categoria = tx.categoria
+                aporte = AporteOpcion(tx.aporteAlPozo)
             }
         }
     }
 
     private func guardar() {
-        let tarjeta = tarjetaTexto.trimmingCharacters(in: .whitespaces).isEmpty
-            ? nil : Tarjeta.obtenerOCrear(nombre: tarjetaTexto, contexto: contexto)
+        // Si la tarjeta no está en un grupo, no tiene sentido un override de pozo.
+        let aporteFinal = tarjetaEnGrupo ? aporte.valor : nil
         if let tx = transaccion {
             tx.monto = monto
             tx.comercio = comercio
             tx.fecha = fecha
             tx.categoria = categoria
             tx.tarjeta = tarjeta
+            tx.aporteAlPozo = aporteFinal
         } else {
             contexto.insert(Transaccion(monto: monto, comercio: comercio, fecha: fecha,
-                                        origen: "manual", categoria: categoria, tarjeta: tarjeta))
+                                        origen: "manual", categoria: categoria, tarjeta: tarjeta,
+                                        aporteAlPozo: aporteFinal))
         }
         // Aprende de esta clasificación manual. Si editando y se renombró el
         // comercio, indexa por el nombre CRUDO original y guarda el alias nuevo.

@@ -43,10 +43,10 @@ struct TransaccionesView: View {
                                             .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
-                                }
-                                .onDelete { idx in
-                                    for i in idx { contexto.delete(txs[i]) }
-                                    SnapshotWidget.trasCambio(contexto: contexto)
+                                    .swipeEliminar {
+                                        contexto.delete(tx)
+                                        SnapshotWidget.trasCambio(contexto: contexto)
+                                    }
                                 }
                             } header: {
                                 Text(dia.formatted(.dateTime.weekday(.wide).day().month(.wide)))

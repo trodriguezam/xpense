@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		009012B69A2A2693268E9287 /* Persistencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB31929BFA8A37852DB02D34 /* Persistencia.swift */; };
 		028AA89DEB6C347DC35D9B5B /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89117E545B670D5232F1157A /* Shared.swift */; };
+		0735E81BD27853E7229ABA9C /* StoreCompartido.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B6B722C8BC2DB46E728CD9 /* StoreCompartido.swift */; };
+		0E3C5A0818C607C89E962C06 /* PermisosCompartir.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EB1157F61D6F3181AB3B4F /* PermisosCompartir.swift */; };
 		10FB8BE3EC4E9A8C9540C40E /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89117E545B670D5232F1157A /* Shared.swift */; };
 		1C73C98BAAF036DF59940778 /* MotorPresupuesto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5DC2658D67B6664B2DF9D /* MotorPresupuesto.swift */; };
+		212532DB032920251F4941C0 /* PermisosCompartirTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F0BADC927561F933CBE13B /* PermisosCompartirTests.swift */; };
 		2E4AB0A3B6184263BC0E589B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B7FDE06931AEB11B46A51D /* RootView.swift */; };
 		2E5D8FC0E87C59D486902D89 /* DetalleCategoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF33714C9803E0209D91FF6 /* DetalleCategoriaView.swift */; };
 		45DB6E64BAAC276B7DD458C7 /* DetalleTarjetaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */; };
@@ -18,12 +21,14 @@
 		56FB9337A53696A572A302A3 /* Avisos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06D577EED4E99E67BC59BC /* Avisos.swift */; };
 		5C7BB49DB4A5C2D0410958BD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DEC6BF436BBCB811FAB9DB2F /* Localizable.xcstrings */; };
 		68899E400C8891695887BFA4 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16953165C5C31FBED4471F6C /* TutorialView.swift */; };
+		713F559F62DF4160F387C614 /* GruposView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C7A07A1DCBA558399229B5 /* GruposView.swift */; };
 		79F55113049950D05F8F686B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BEA5B02769BA4110363945 /* HomeView.swift */; };
 		7E971A24DD4683DCBCFA3A07 /* XpenseWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AF81D81F3E82AFF365A165AC /* XpenseWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9913E2348A601C35852830FE /* AgregarGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046703222621730FCAB3B73F /* AgregarGastoView.swift */; };
 		A1E3B4EEFF1CD3F0AB110F20 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0310C89270CB705AB950D /* AjustesView.swift */; };
 		B82B0E7E5341A396D1B25BC4 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8B24F166E655DE7E1F81C967 /* AppIcon.icon */; };
 		BBD895B0E1FE831E386C684A /* TransaccionesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86FF000097B29002D87CDBA /* TransaccionesView.swift */; };
+		C98FCE998227C74CD04732F9 /* CompartirGrupo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F20A3B08981CD1E03EC5A /* CompartirGrupo.swift */; };
 		CDD99EB09B4871E13416FA45 /* RegistrarGastoIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004D270A1A0D7B172BC328B /* RegistrarGastoIntent.swift */; };
 		CE574426BFC9F924AF38CC23 /* Modelos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC975AA40FCE931F8E6D3AD6 /* Modelos.swift */; };
 		CFF622F77CD56606FB2C4EF8 /* XpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED7F5847124AB72E7A3E2D4 /* XpenseApp.swift */; };
@@ -35,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3FC5C797018084D3668AAC2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B60390AC802E859A6BA2B8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F031D4C2BFB97ED067CA33D;
+			remoteInfo = Xpense;
+		};
 		9B1A576C19405B72FAF9FAA3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3B60390AC802E859A6BA2B8C /* Project object */;
@@ -62,13 +74,16 @@
 		046703222621730FCAB3B73F /* AgregarGastoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarGastoView.swift; sourceTree = "<group>"; };
 		16953165C5C31FBED4471F6C /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleTarjetaView.swift; sourceTree = "<group>"; };
+		33C7A07A1DCBA558399229B5 /* GruposView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GruposView.swift; sourceTree = "<group>"; };
 		3DB77EF78FF1B321ABA0007C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		408F20A3B08981CD1E03EC5A /* CompartirGrupo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartirGrupo.swift; sourceTree = "<group>"; };
 		52BEA5B02769BA4110363945 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		56084DD900518AFBAA3E5065 /* Xpense.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Xpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasView.swift; sourceTree = "<group>"; };
 		5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasView.swift; sourceTree = "<group>"; };
 		66F34E409525145482F225F8 /* Xpense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xpense.entitlements; sourceTree = "<group>"; };
 		72E4014E4901985350FD5E82 /* AutoCategorizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategorizador.swift; sourceTree = "<group>"; };
+		78F0BADC927561F933CBE13B /* PermisosCompartirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermisosCompartirTests.swift; sourceTree = "<group>"; };
 		89117E545B670D5232F1157A /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		8B24F166E655DE7E1F81C967 /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		8D89559FA41116F4120DD83A /* SnapshotWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotWidget.swift; sourceTree = "<group>"; };
@@ -87,6 +102,9 @@
 		DA114CAB5168942E0FD4DD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DEC6BF436BBCB811FAB9DB2F /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E0B7FDE06931AEB11B46A51D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E3B6B722C8BC2DB46E728CD9 /* StoreCompartido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCompartido.swift; sourceTree = "<group>"; };
+		E92F951C01764CE34ED6BC19 /* XpenseTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = XpenseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9EB1157F61D6F3181AB3B4F /* PermisosCompartir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermisosCompartir.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -103,9 +121,12 @@
 			children = (
 				72E4014E4901985350FD5E82 /* AutoCategorizador.swift */,
 				CE06D577EED4E99E67BC59BC /* Avisos.swift */,
+				408F20A3B08981CD1E03EC5A /* CompartirGrupo.swift */,
 				B6A5DC2658D67B6664B2DF9D /* MotorPresupuesto.swift */,
+				F9EB1157F61D6F3181AB3B4F /* PermisosCompartir.swift */,
 				CB31929BFA8A37852DB02D34 /* Persistencia.swift */,
 				8D89559FA41116F4120DD83A /* SnapshotWidget.swift */,
+				E3B6B722C8BC2DB46E728CD9 /* StoreCompartido.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -115,6 +136,7 @@
 			children = (
 				8B2A2FC4F853DFF6908F7559 /* Shared */,
 				62F89FFDD3CB2FC8A370FF7F /* Xpense */,
+				774D4FFB75415A5F8235EC96 /* XpenseTests */,
 				B37974333DE0865EFA8FFC1C /* XpenseWidget */,
 				DA2D2F8E0F6BA57A7B2BE20C /* Products */,
 			);
@@ -133,6 +155,14 @@
 				D5045BF35EEE9E2D7567D285 /* Views */,
 			);
 			path = Xpense;
+			sourceTree = "<group>";
+		};
+		774D4FFB75415A5F8235EC96 /* XpenseTests */ = {
+			isa = PBXGroup;
+			children = (
+				78F0BADC927561F933CBE13B /* PermisosCompartirTests.swift */,
+			);
+			path = XpenseTests;
 			sourceTree = "<group>";
 		};
 		8B2A2FC4F853DFF6908F7559 /* Shared */ = {
@@ -162,6 +192,7 @@
 				5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */,
 				9FF33714C9803E0209D91FF6 /* DetalleCategoriaView.swift */,
 				239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */,
+				33C7A07A1DCBA558399229B5 /* GruposView.swift */,
 				52BEA5B02769BA4110363945 /* HomeView.swift */,
 				E0B7FDE06931AEB11B46A51D /* RootView.swift */,
 				5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */,
@@ -175,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				56084DD900518AFBAA3E5065 /* Xpense.app */,
+				E92F951C01764CE34ED6BC19 /* XpenseTests.xctest */,
 				AF81D81F3E82AFF365A165AC /* XpenseWidget.appex */,
 			);
 			name = Products;
@@ -191,6 +223,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4887B555E1DDAF8249E8ABDB /* XpenseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1A4821F84D1C3F27927841 /* Build configuration list for PBXNativeTarget "XpenseTests" */;
+			buildPhases = (
+				6F3CCFE64581D7B96B138506 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				796D53F408DE33B3A540C019 /* PBXTargetDependency */,
+			);
+			name = XpenseTests;
+			packageProductDependencies = (
+			);
+			productName = XpenseTests;
+			productReference = E92F951C01764CE34ED6BC19 /* XpenseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		700D6370187B8C1CA6C6A549 /* XpenseWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B29D9C8C0B7853C1B356C16 /* Build configuration list for PBXNativeTarget "XpenseWidget" */;
@@ -238,6 +288,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					4887B555E1DDAF8249E8ABDB = {
+						DevelopmentTeam = 9T6BFX3WVY;
+						ProvisioningStyle = Automatic;
+					};
 					700D6370187B8C1CA6C6A549 = {
 						DevelopmentTeam = 9T6BFX3WVY;
 						ProvisioningStyle = Automatic;
@@ -264,6 +318,7 @@
 			projectRoot = "";
 			targets = (
 				7F031D4C2BFB97ED067CA33D /* Xpense */,
+				4887B555E1DDAF8249E8ABDB /* XpenseTests */,
 				700D6370187B8C1CA6C6A549 /* XpenseWidget */,
 			);
 		};
@@ -290,6 +345,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6F3CCFE64581D7B96B138506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				212532DB032920251F4941C0 /* PermisosCompartirTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7B17D4BB9653982B84907E5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,16 +371,20 @@
 				4B81027FB8F16052A5613589 /* AutoCategorizador.swift in Sources */,
 				56FB9337A53696A572A302A3 /* Avisos.swift in Sources */,
 				D3CC8127C68187FB33661242 /* CategoriasView.swift in Sources */,
+				C98FCE998227C74CD04732F9 /* CompartirGrupo.swift in Sources */,
 				2E5D8FC0E87C59D486902D89 /* DetalleCategoriaView.swift in Sources */,
 				45DB6E64BAAC276B7DD458C7 /* DetalleTarjetaView.swift in Sources */,
+				713F559F62DF4160F387C614 /* GruposView.swift in Sources */,
 				79F55113049950D05F8F686B /* HomeView.swift in Sources */,
 				CE574426BFC9F924AF38CC23 /* Modelos.swift in Sources */,
 				1C73C98BAAF036DF59940778 /* MotorPresupuesto.swift in Sources */,
+				0E3C5A0818C607C89E962C06 /* PermisosCompartir.swift in Sources */,
 				009012B69A2A2693268E9287 /* Persistencia.swift in Sources */,
 				CDD99EB09B4871E13416FA45 /* RegistrarGastoIntent.swift in Sources */,
 				2E4AB0A3B6184263BC0E589B /* RootView.swift in Sources */,
 				10FB8BE3EC4E9A8C9540C40E /* Shared.swift in Sources */,
 				D27C3982D08F819044306170 /* SnapshotWidget.swift in Sources */,
+				0735E81BD27853E7229ABA9C /* StoreCompartido.swift in Sources */,
 				DBBD94B8382DA49924549F22 /* TarjetasView.swift in Sources */,
 				BBD895B0E1FE831E386C684A /* TransaccionesView.swift in Sources */,
 				68899E400C8891695887BFA4 /* TutorialView.swift in Sources */,
@@ -328,6 +395,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		796D53F408DE33B3A540C019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F031D4C2BFB97ED067CA33D /* Xpense */;
+			targetProxy = 3FC5C797018084D3668AAC2E /* PBXContainerItemProxy */;
+		};
 		E945401F13E1A0DEE6B16E0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 700D6370187B8C1CA6C6A549 /* XpenseWidget */;
@@ -336,6 +408,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0CF5DA240510075008F9F903 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cl.trodriguezam.xpense.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xpense.app/Xpense";
+			};
+			name = Release;
+		};
 		1291430900369F4F216A3E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -529,6 +618,23 @@
 			};
 			name = Debug;
 		};
+		F2D44701C5A2B45A9B8790D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cl.trodriguezam.xpense.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Xpense.app/Xpense";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -537,6 +643,15 @@
 			buildConfigurations = (
 				1291430900369F4F216A3E6E /* Debug */,
 				AD65706DD5884305FC6752F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF1A4821F84D1C3F27927841 /* Build configuration list for PBXNativeTarget "XpenseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D44701C5A2B45A9B8790D9 /* Debug */,
+				0CF5DA240510075008F9F903 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

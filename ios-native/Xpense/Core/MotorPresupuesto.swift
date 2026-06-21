@@ -119,4 +119,28 @@ enum MotorPresupuesto {
         let ts = (try? contexto.fetch(FetchDescriptor<Tarjeta>(sortBy: [SortDescriptor(\.nombre)]))) ?? []
         return ts.map { estadoTarjeta($0, contexto: contexto) }
     }
+
+    // MARK: - Grupos / pozo común (siempre mensual)
+
+    /// ¿Este gasto aporta al pozo? El gasto manda (override); si no, decide la tarjeta.
+    static func aportaAlPozo(_ tx: Transaccion) -> Bool {
+        tx.aporteAlPozo ?? (tx.tarjeta?.aportaAlPozoPorDefecto ?? false)
+    }
+
+    /// Aporte de una persona al pozo del grupo este mes (gastos de sus tarjetas que aportan).
+    static func aportePersona(_ persona: Persona, contexto: ModelContext, ref: Date = .now) -> Int {
+        let txs = transacciones(en: rango(.mensual, ref: ref), contexto: contexto)
+        return txs.filter { tx in
+            tx.tarjeta?.dueno?.persistentModelID == persona.persistentModelID && aportaAlPozo(tx)
+        }.reduce(0) { $0 + $1.monto }
+    }
+
+    /// Resumen del pozo del grupo: total del mes y aporte por persona (de mayor a menor).
+    static func pozo(_ grupo: Grupo, contexto: ModelContext, ref: Date = .now)
+        -> (total: Int, porPersona: [(persona: Persona, aporte: Int)]) {
+        let personas = grupo.personas ?? []
+        let aportes = personas.map { (persona: $0, aporte: aportePersona($0, contexto: contexto, ref: ref)) }
+            .sorted { $0.aporte > $1.aporte }
+        return (aportes.reduce(0) { $0 + $1.aporte }, aportes)
+    }
 }

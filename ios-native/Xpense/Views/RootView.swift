@@ -16,8 +16,8 @@ struct RootView: View {
                 .tabItem { Label("Categorías", systemImage: "circle.grid.2x2.fill") }
             TarjetasView()
                 .tabItem { Label("Tarjetas", systemImage: "creditcard.fill") }
-            AjustesView()
-                .tabItem { Label("Ajustes", systemImage: "gearshape.fill") }
+            GruposView()
+                .tabItem { Label("Grupo", systemImage: "person.2.fill") }
         }
         .sheet(isPresented: $mostrarTutorial, onDismiss: {
             tutorialVisto = true
@@ -84,5 +84,19 @@ extension View {
             .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(Paleta.superficie))
             .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .strokeBorder(Paleta.arena, lineWidth: 1))
+    }
+
+    /// Swipe destructivo consistente en toda la app: tinte `teja` (rojo cálido de
+    /// la paleta, no de pánico) e ícono de basurero. Reemplaza al rojo del sistema
+    /// que dejaba `.onDelete`, para que todos los borrados se vean igual.
+    func swipeEliminar(_ titulo: LocalizedStringKey = "Eliminar",
+                       systemImage: String = "trash",
+                       accion: @escaping () -> Void) -> some View {
+        swipeActions(edge: .trailing, allowsFullSwipe: true) {
+            Button(role: .destructive, action: accion) {
+                Label(titulo, systemImage: systemImage)
+            }
+            .tint(Paleta.teja)
+        }
     }
 }

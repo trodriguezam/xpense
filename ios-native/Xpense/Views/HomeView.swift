@@ -6,6 +6,7 @@ struct HomeView: View {
     @Query(sort: \Transaccion.fecha, order: .reverse) private var transacciones: [Transaccion]
     @Query private var categorias: [Categoria]
     @State private var mostrarAgregar = false
+    @State private var mostrarAjustes = false
     @State private var editarTx: Transaccion?
 
     private var estados: [EstadoCategoria] {
@@ -25,9 +26,8 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-
+            List {
+                Section {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(saludo)
                             .font(.system(.title3, design: .serif))
@@ -37,6 +37,7 @@ struct HomeView: View {
                             .foregroundStyle(Paleta.corteza)
                     }
                     .padding(.top, 8)
+                    .listRowFondoTransparente()
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text("GASTADO ESTE MES")
@@ -52,6 +53,7 @@ struct HomeView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .tarjeta()
+                    .listRowFondoTransparente()
 
                     if !estados.isEmpty {
                         VStack(alignment: .leading, spacing: 14) {
@@ -63,6 +65,7 @@ struct HomeView: View {
                             }
                         }
                         .tarjeta()
+                        .listRowFondoTransparente()
                     } else {
                         VStack(spacing: 8) {
                             Image(systemName: "leaf")
@@ -75,29 +78,46 @@ struct HomeView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .tarjeta()
-                    }
-
-                    if !transacciones.isEmpty {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("Últimos movimientos")
-                                .font(.system(.title3, design: .serif).weight(.medium))
-                                .foregroundStyle(Paleta.corteza)
-                            ForEach(transacciones.prefix(5)) { tx in
-                                Button { editarTx = tx } label: {
-                                    FilaTransaccion(tx: tx)
-                                        .contentShape(Rectangle())
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
-                        .tarjeta()
+                        .listRowFondoTransparente()
                     }
                 }
-                .padding(.horizontal)
-                .padding(.bottom, 24)
+
+                if !transacciones.isEmpty {
+                    Section {
+                        ForEach(transacciones.prefix(5)) { tx in
+                            Button { editarTx = tx } label: {
+                                FilaTransaccion(tx: tx)
+                                    .padding(.vertical, 12)
+                                    .padding(.horizontal, 14)
+                                    .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .fill(Paleta.superficie))
+                                    .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                        .strokeBorder(Paleta.arena, lineWidth: 1))
+                                    .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                            .swipeEliminar { eliminar(tx) }
+                        }
+                    } header: {
+                        Text("Últimos movimientos")
+                            .font(.system(.title3, design: .serif).weight(.medium))
+                            .foregroundStyle(Paleta.corteza)
+                            .textCase(nil)
+                    }
+                }
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
             .background(Paleta.bruma)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button { mostrarAjustes = true } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { mostrarAgregar = true } label: {
                         Image(systemName: "plus")
@@ -105,8 +125,25 @@ struct HomeView: View {
                 }
             }
             .sheet(isPresented: $mostrarAgregar) { AgregarGastoView() }
+            .sheet(isPresented: $mostrarAjustes) { AjustesView() }
             .sheet(item: $editarTx) { AgregarGastoView(transaccion: $0) }
         }
+    }
+
+    private func eliminar(_ tx: Transaccion) {
+        contexto.delete(tx)
+        SnapshotWidget.trasCambio(contexto: contexto)
+    }
+}
+
+extension View {
+    /// Fila de `List` sin fondo ni separador propios: deja ver la `bruma` y
+    /// permite reusar las tarjetas custom dentro de una `List`.
+    func listRowFondoTransparente() -> some View {
+        self
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
     }
 }
 

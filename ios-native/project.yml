@@ -33,6 +33,7 @@ targets:
         CFBundleDisplayName: Xpense
         CFBundleDevelopmentRegion: es
         UIBackgroundModes: [remote-notification]   # sync silencioso de CloudKit
+        CKSharingSupported: true                    # permite aceptar invitaciones CKShare (grupos compartidos)
         ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}                         # launch screen nativo (evita modo escalado)
         UIRequiresFullScreen: true                 # app de iPhone enfocada (sin multitarea iPad)
@@ -43,6 +44,16 @@ targets:
     dependencies:
       - target: XpenseWidget
         embed: true
+  XpenseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [XpenseTests]
+    dependencies:
+      - target: Xpense
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: cl.trodriguezam.xpense.tests
+        GENERATE_INFOPLIST_FILE: true
   XpenseWidget:
     type: app-extension
     platform: iOS

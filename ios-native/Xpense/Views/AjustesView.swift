@@ -3,6 +3,7 @@ import SwiftData
 
 struct AjustesView: View {
     @Environment(\.modelContext) private var contexto
+    @Environment(\.dismiss) private var cerrar
     @State private var mostrarTutorial = false
 
     var body: some View {
@@ -50,6 +51,11 @@ struct AjustesView: View {
             .scrollContentBackground(.hidden)
             .background(Paleta.bruma)
             .navigationTitle("Ajustes")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Listo") { cerrar() }
+                }
+            }
             .sheet(isPresented: $mostrarTutorial) { TutorialView() }
         }
     }

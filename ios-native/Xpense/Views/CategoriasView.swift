@@ -26,12 +26,17 @@ struct CategoriasView: View {
                             }
                         }
                     }
-                }
-                .onDelete { idx in
-                    for i in idx where !categorias[i].esPredeterminada {
-                        contexto.delete(categorias[i])
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        if !cat.esPredeterminada {
+                            Button(role: .destructive) {
+                                contexto.delete(cat)
+                                SnapshotWidget.trasCambio(contexto: contexto)
+                            } label: {
+                                Label("Eliminar", systemImage: "trash")
+                            }
+                            .tint(Paleta.teja)
+                        }
                     }
-                    SnapshotWidget.trasCambio(contexto: contexto)
                 }
             }
             .scrollContentBackground(.hidden)

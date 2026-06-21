@@ -49,11 +49,48 @@ final class Tarjeta {
     var limiteMonto: Int?                     // CLP mensual; nil = sin límite
     var umbralAviso: Double = 0.8             // 0 ... 1
     var creadaEl: Date = Date.now
+    /// Si está activo, los gastos de esta tarjeta aportan al pozo del grupo por
+    /// defecto. Un gasto puede sobrescribirlo solo para sí (`Transaccion.aporteAlPozo`).
+    var aportaAlPozoPorDefecto: Bool = false
+    /// Dueño de la tarjeta dentro de un grupo (ej. la tarjeta de un hijo que es
+    /// del padre). nil = sin grupo / personal.
+    var dueno: Persona?
     @Relationship(deleteRule: .nullify, inverse: \Transaccion.tarjeta)
     var transacciones: [Transaccion]? = []
 
     init(nombre: String) {
         self.nombre = nombre
+    }
+}
+
+/// Grupo de gastos compartidos (familia, arrendatarios…). Reúne personas y un
+/// "pozo común" alimentado por los gastos que aportan. Sincroniza por iCloud.
+@Model
+final class Grupo {
+    var nombre: String = ""
+    var creadoEl: Date = Date.now
+    @Relationship(deleteRule: .cascade, inverse: \Persona.grupo)
+    var personas: [Persona]? = []
+
+    init(nombre: String) {
+        self.nombre = nombre
+    }
+}
+
+/// Persona dentro de un grupo. Puede tener tarjetas a su nombre. `esYo` marca a
+/// la persona que corresponde al usuario de este dispositivo.
+@Model
+final class Persona {
+    var nombre: String = ""
+    var esYo: Bool = false
+    var creadaEl: Date = Date.now
+    var grupo: Grupo?
+    @Relationship(deleteRule: .nullify, inverse: \Tarjeta.dueno)
+    var tarjetas: [Tarjeta]? = []
+
+    init(nombre: String, esYo: Bool = false) {
+        self.nombre = nombre
+        self.esYo = esYo
     }
 }
 
@@ -64,11 +101,15 @@ final class Transaccion {
     var nota: String = ""
     var fecha: Date = Date.now
     var origen: String = "manual"             // "manual" | "applepay"
+    /// Sobrescribe, solo para este gasto, si aporta al pozo del grupo.
+    /// nil = usar el default de la tarjeta (`Tarjeta.aportaAlPozoPorDefecto`).
+    var aporteAlPozo: Bool?
     var categoria: Categoria?
     var tarjeta: Tarjeta?
 
     init(monto: Int, comercio: String, fecha: Date = .now, nota: String = "",
-         origen: String = "manual", categoria: Categoria? = nil, tarjeta: Tarjeta? = nil) {
+         origen: String = "manual", categoria: Categoria? = nil, tarjeta: Tarjeta? = nil,
+         aporteAlPozo: Bool? = nil) {
         self.monto = monto
         self.comercio = comercio
         self.fecha = fecha
@@ -76,6 +117,7 @@ final class Transaccion {
         self.origen = origen
         self.categoria = categoria
         self.tarjeta = tarjeta
+        self.aporteAlPozo = aporteAlPozo
     }
 }
 

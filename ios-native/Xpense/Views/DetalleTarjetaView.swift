@@ -75,7 +75,7 @@ struct DetalleTarjetaView: View {
                 Text("Los gastos de la tarjeta no se borran; solo dejan de tener tarjeta.")
             }
         }
-        .confirmationDialog("¿Eliminar esta tarjeta?", isPresented: $confirmarBorrado, titleVisibility: .visible) {
+        .alert("¿Eliminar esta tarjeta?", isPresented: $confirmarBorrado) {
             Button("Eliminar", role: .destructive) {
                 borrada = true
                 contexto.delete(tarjeta)
@@ -83,6 +83,8 @@ struct DetalleTarjetaView: View {
                 cerrar()
             }
             Button("Cancelar", role: .cancel) {}
+        } message: {
+            Text("Los gastos de la tarjeta no se borran; solo dejan de tener tarjeta.")
         }
         .scrollDismissesKeyboard(.interactively)
         .scrollContentBackground(.hidden)
