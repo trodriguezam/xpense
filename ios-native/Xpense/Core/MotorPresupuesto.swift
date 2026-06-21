@@ -14,6 +14,14 @@ struct EstadoCategoria: Identifiable {
     var id: PersistentIdentifier { categoria.persistentModelID }
 }
 
+struct EstadoTarjeta: Identifiable {
+    let tarjeta: Tarjeta
+    let gastado: Int
+    let fraccion: Double      // 0 si no hay límite
+    let nivel: Nivel
+    var id: PersistentIdentifier { tarjeta.persistentModelID }
+}
+
 enum MotorPresupuesto {
 
     /// Semana chilena: parte el lunes.
@@ -87,5 +95,28 @@ enum MotorPresupuesto {
             return String(localized: "Atento por aquí: hay categorías cerca de su límite.")
         }
         return String(localized: "Vas con calma este mes.")
+    }
+
+    // MARK: - Tarjetas (límite siempre mensual)
+
+    static func gastadoTarjeta(_ tarjeta: Tarjeta, contexto: ModelContext, ref: Date = .now) -> Int {
+        let txs = transacciones(en: rango(.mensual, ref: ref), contexto: contexto)
+        return txs.filter { $0.tarjeta?.persistentModelID == tarjeta.persistentModelID }
+                  .reduce(0) { $0 + $1.monto }
+    }
+
+    static func estadoTarjeta(_ tarjeta: Tarjeta, contexto: ModelContext) -> EstadoTarjeta {
+        let g = gastadoTarjeta(tarjeta, contexto: contexto)
+        guard let limite = tarjeta.limiteMonto, limite > 0 else {
+            return EstadoTarjeta(tarjeta: tarjeta, gastado: g, fraccion: 0, nivel: .sinLimite)
+        }
+        let f = Double(g) / Double(limite)
+        let nivel: Nivel = f >= 1.0 ? .superado : (f >= tarjeta.umbralAviso && g > 0 ? .cerca : .conCalma)
+        return EstadoTarjeta(tarjeta: tarjeta, gastado: g, fraccion: f, nivel: nivel)
+    }
+
+    static func estadosTarjetas(contexto: ModelContext) -> [EstadoTarjeta] {
+        let ts = (try? contexto.fetch(FetchDescriptor<Tarjeta>(sortBy: [SortDescriptor(\.nombre)]))) ?? []
+        return ts.map { estadoTarjeta($0, contexto: contexto) }
     }
 }

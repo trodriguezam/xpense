@@ -13,6 +13,7 @@
 		1C73C98BAAF036DF59940778 /* MotorPresupuesto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5DC2658D67B6664B2DF9D /* MotorPresupuesto.swift */; };
 		2E4AB0A3B6184263BC0E589B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B7FDE06931AEB11B46A51D /* RootView.swift */; };
 		2E5D8FC0E87C59D486902D89 /* DetalleCategoriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF33714C9803E0209D91FF6 /* DetalleCategoriaView.swift */; };
+		45DB6E64BAAC276B7DD458C7 /* DetalleTarjetaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */; };
 		4B81027FB8F16052A5613589 /* AutoCategorizador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E4014E4901985350FD5E82 /* AutoCategorizador.swift */; };
 		56FB9337A53696A572A302A3 /* Avisos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE06D577EED4E99E67BC59BC /* Avisos.swift */; };
 		5C7BB49DB4A5C2D0410958BD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DEC6BF436BBCB811FAB9DB2F /* Localizable.xcstrings */; };
@@ -29,6 +30,7 @@
 		D27C3982D08F819044306170 /* SnapshotWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D89559FA41116F4120DD83A /* SnapshotWidget.swift */; };
 		D3CC8127C68187FB33661242 /* CategoriasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */; };
 		D447C0DC039308FE8C3664E8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DEC6BF436BBCB811FAB9DB2F /* Localizable.xcstrings */; };
+		DBBD94B8382DA49924549F22 /* TarjetasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */; };
 		EE4954CA24F7CD3536A172B1 /* XpenseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71998A826ADCF6AA844DEC3 /* XpenseWidget.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +61,11 @@
 /* Begin PBXFileReference section */
 		046703222621730FCAB3B73F /* AgregarGastoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgregarGastoView.swift; sourceTree = "<group>"; };
 		16953165C5C31FBED4471F6C /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleTarjetaView.swift; sourceTree = "<group>"; };
 		3DB77EF78FF1B321ABA0007C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52BEA5B02769BA4110363945 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		56084DD900518AFBAA3E5065 /* Xpense.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Xpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasView.swift; sourceTree = "<group>"; };
 		5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasView.swift; sourceTree = "<group>"; };
 		66F34E409525145482F225F8 /* Xpense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xpense.entitlements; sourceTree = "<group>"; };
 		72E4014E4901985350FD5E82 /* AutoCategorizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategorizador.swift; sourceTree = "<group>"; };
@@ -157,8 +161,10 @@
 				9CB0310C89270CB705AB950D /* AjustesView.swift */,
 				5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */,
 				9FF33714C9803E0209D91FF6 /* DetalleCategoriaView.swift */,
+				239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */,
 				52BEA5B02769BA4110363945 /* HomeView.swift */,
 				E0B7FDE06931AEB11B46A51D /* RootView.swift */,
+				5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */,
 				A86FF000097B29002D87CDBA /* TransaccionesView.swift */,
 				16953165C5C31FBED4471F6C /* TutorialView.swift */,
 			);
@@ -303,6 +309,7 @@
 				56FB9337A53696A572A302A3 /* Avisos.swift in Sources */,
 				D3CC8127C68187FB33661242 /* CategoriasView.swift in Sources */,
 				2E5D8FC0E87C59D486902D89 /* DetalleCategoriaView.swift in Sources */,
+				45DB6E64BAAC276B7DD458C7 /* DetalleTarjetaView.swift in Sources */,
 				79F55113049950D05F8F686B /* HomeView.swift in Sources */,
 				CE574426BFC9F924AF38CC23 /* Modelos.swift in Sources */,
 				1C73C98BAAF036DF59940778 /* MotorPresupuesto.swift in Sources */,
@@ -311,6 +318,7 @@
 				2E4AB0A3B6184263BC0E589B /* RootView.swift in Sources */,
 				10FB8BE3EC4E9A8C9540C40E /* Shared.swift in Sources */,
 				D27C3982D08F819044306170 /* SnapshotWidget.swift in Sources */,
+				DBBD94B8382DA49924549F22 /* TarjetasView.swift in Sources */,
 				BBD895B0E1FE831E386C684A /* TransaccionesView.swift in Sources */,
 				68899E400C8891695887BFA4 /* TutorialView.swift in Sources */,
 				CFF622F77CD56606FB2C4EF8 /* XpenseApp.swift in Sources */,

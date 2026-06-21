@@ -48,4 +48,29 @@ enum Avisos {
                                         content: contenido, trigger: nil)
         UNUserNotificationCenter.current().add(req)
     }
+
+    /// Aviso de límite mensual de una tarjeta (mismo patrón: 1 por nivel por mes).
+    static func evaluar(_ estado: EstadoTarjeta) {
+        guard estado.nivel == .cerca || estado.nivel == .superado else { return }
+        let t = estado.tarjeta
+        let clave = "avisoTarjeta.\(t.nombre).\(MotorPresupuesto.clavePeriodo(.mensual))"
+        let ud = UserDefaults(suiteName: Compartido.appGroup)
+        let previo = ud?.integer(forKey: clave) ?? 0
+        guard estado.nivel.rawValue > previo else { return }
+        ud?.set(estado.nivel.rawValue, forKey: clave)
+
+        let contenido = UNMutableNotificationContent()
+        let limite = t.limiteMonto ?? 0
+        if estado.nivel == .cerca {
+            contenido.title = String(localized: "Te acercas al límite de \(t.nombre)")
+            contenido.body = String(localized: "Llevas \(clp(estado.gastado)) de \(clp(limite)) este mes en \(t.nombre). Aún hay espacio — respira.")
+        } else {
+            contenido.title = String(localized: "Superaste el límite de \(t.nombre)")
+            contenido.body = String(localized: "Llevas \(clp(estado.gastado)) de \(clp(limite)) este mes en \(t.nombre). Sin culpa: obsérvalo y sigue.")
+        }
+        contenido.sound = .default
+        let req = UNNotificationRequest(identifier: clave + ".\(estado.nivel.rawValue)",
+                                        content: contenido, trigger: nil)
+        UNUserNotificationCenter.current().add(req)
+    }
 }

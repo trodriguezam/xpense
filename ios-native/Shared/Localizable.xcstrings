@@ -1,6 +1,23 @@
 {
   "sourceLanguage" : "es",
   "strings" : {
+    "Eliminar tarjeta" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete card" } } } },
+    "¿Eliminar esta tarjeta?" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Delete this card?" } } } },
+    "Los gastos de la tarjeta no se borran; solo dejan de tener tarjeta." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "The card's expenses aren't deleted; they just lose their card." } } } },
+    "Tarjetas" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Cards" } } } },
+    "Tarjeta" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Card" } } } },
+    "Tarjeta (opcional)" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Card (optional)" } } } },
+    "Ninguna" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "None" } } } },
+    "Sin tarjetas aún" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "No cards yet" } } } },
+    "Aparecen solas al registrar un gasto con tarjeta, o cuando configuras la captura de Apple Pay. Luego puedes ponerles un límite mensual." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "They show up on their own when you log an expense with a card, or when you set up Apple Pay capture. Then you can give them a monthly limit." } } } },
+    "%@ de %@ este mes" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "%1$@ of %2$@ this month" } } } },
+    "Límite mensual" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Monthly limit" } } } },
+    "Movimientos del mes" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "This month's expenses" } } } },
+    "Llevas %@ de %@ este mes en %@. Aún hay espacio — respira." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "You've spent %1$@ of %2$@ this month on %3$@. There's still room — breathe." } } } },
+    "Llevas %@ de %@ este mes en %@. Sin culpa: obsérvalo y sigue." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "You've spent %1$@ of %2$@ this month on %3$@. No guilt: notice it and move on." } } } },
+    "5 · Conecta la Tarjeta (opcional)" : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "5 · Wire up the Card (optional)" } } } },
+    "Si quieres llevar el gasto por tarjeta, repite en el campo Tarjeta: tócalo, elige Entrada del atajo y luego el subcampo Tarjeta.\n\nFinalmente toca Listo para guardar la automatización." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "If you want to track spending by card, repeat with the Card field: tap it, pick Shortcut Input and then the Card subfield.\n\nFinally tap Done to save the automation." } } } },
+    "Repite con el campo Comercio: toca el campo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante." : { "localizations" : { "en" : { "stringUnit" : { "state" : "translated", "value" : "Repeat with the Merchant field: tap the field, pick Shortcut Input from the bar, tap the variable again and choose Merchant." } } } },
     "¡Listo!" : {
       "extractionState" : "stale",
       "localizations" : {

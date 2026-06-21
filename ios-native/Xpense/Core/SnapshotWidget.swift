@@ -34,6 +34,7 @@ enum SnapshotWidget {
     static func trasCambio(contexto: ModelContext) {
         try? contexto.save()
         for e in MotorPresupuesto.estados(contexto: contexto) { Avisos.evaluar(e) }
+        for e in MotorPresupuesto.estadosTarjetas(contexto: contexto) { Avisos.evaluar(e) }
         escribir(contexto: contexto)
     }
 }

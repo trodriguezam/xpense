@@ -6,11 +6,14 @@ struct AgregarGastoView: View {
     @Environment(\.modelContext) private var contexto
     @Environment(\.dismiss) private var cerrar
     @Query(sort: \Categoria.nombre) private var categorias: [Categoria]
+    @Query(sort: \Tarjeta.nombre) private var tarjetas: [Tarjeta]
 
     var transaccion: Transaccion? = nil
 
     @State private var montoTexto = ""
     @State private var comercio = ""
+    @State private var comercioOriginal = ""        // nombre crudo al abrir (para el alias)
+    @State private var tarjetaTexto = ""
     @State private var fecha = Date.now
     @State private var categoria: Categoria?
     @State private var sugeridaAuto = false
@@ -34,7 +37,7 @@ struct AgregarGastoView: View {
                 Section {
                     TextField("Ej: Jumbo, Copec, Uber…", text: $comercio)
                         .onChange(of: comercio) {
-                            if let s = AutoCategorizador.sugerir(comercio: comercio, entre: categorias) {
+                            if let s = AutoCategorizador.clasificar(comercio: comercio, entre: categorias, contexto: contexto) {
                                 categoria = s
                                 sugeridaAuto = true
                             } else if sugeridaAuto {
@@ -57,6 +60,22 @@ struct AgregarGastoView: View {
                     }
                     DatePicker("Fecha", selection: $fecha, displayedComponents: .date)
                 }
+
+                Section {
+                    HStack {
+                        TextField("Tarjeta (opcional)", text: $tarjetaTexto)
+                        if !tarjetas.isEmpty {
+                            Menu {
+                                Button("Ninguna") { tarjetaTexto = "" }
+                                ForEach(tarjetas) { t in
+                                    Button(t.nombre) { tarjetaTexto = t.nombre }
+                                }
+                            } label: {
+                                Image(systemName: "creditcard").foregroundStyle(Paleta.musgo)
+                            }
+                        }
+                    }
+                } header: { Text("Tarjeta") }
 
                 if editando {
                     Section {
@@ -86,6 +105,8 @@ struct AgregarGastoView: View {
                 guard let tx = transaccion, montoTexto.isEmpty else { return }
                 montoTexto = String(tx.monto)
                 comercio = tx.comercio
+                comercioOriginal = tx.comercio
+                tarjetaTexto = tx.tarjeta?.nombre ?? ""
                 fecha = tx.fecha
                 categoria = tx.categoria
             }
@@ -93,15 +114,24 @@ struct AgregarGastoView: View {
     }
 
     private func guardar() {
+        let tarjeta = tarjetaTexto.trimmingCharacters(in: .whitespaces).isEmpty
+            ? nil : Tarjeta.obtenerOCrear(nombre: tarjetaTexto, contexto: contexto)
         if let tx = transaccion {
             tx.monto = monto
             tx.comercio = comercio
             tx.fecha = fecha
             tx.categoria = categoria
+            tx.tarjeta = tarjeta
         } else {
             contexto.insert(Transaccion(monto: monto, comercio: comercio, fecha: fecha,
-                                        origen: "manual", categoria: categoria))
+                                        origen: "manual", categoria: categoria, tarjeta: tarjeta))
         }
+        // Aprende de esta clasificación manual. Si editando y se renombró el
+        // comercio, indexa por el nombre CRUDO original y guarda el alias nuevo.
+        let crudo = (editando && !comercioOriginal.isEmpty) ? comercioOriginal : comercio
+        let alias = (editando && comercioOriginal != comercio) ? comercio : nil
+        AutoCategorizador.aprender(comercio: crudo, nombreDisplay: alias,
+                                   categoria: categoria, contexto: contexto)
         SnapshotWidget.trasCambio(contexto: contexto)
         cerrar()
     }

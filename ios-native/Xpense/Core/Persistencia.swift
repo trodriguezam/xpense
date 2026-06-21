@@ -8,7 +8,7 @@ enum Persistencia {
     /// Intenta el modo ideal (App Group + CloudKit) y degrada con calma si algo falla,
     /// para que la app siga abriendo aunque iCloud/CloudKit no esté disponible.
     private static func crearContenedor() -> ModelContainer {
-        let esquema = Schema([Categoria.self, Transaccion.self])
+        let esquema = Schema([Categoria.self, Transaccion.self, ReglaAprendida.self, Tarjeta.self])
 
         // 1) Ideal: datos en el App Group (los lee el widget) + sync con iCloud.
         let conNube = ModelConfiguration(schema: esquema,
@@ -52,7 +52,8 @@ enum Persistencia {
         guard cuantas == 0 else { return }
         for c in base {
             contexto.insert(Categoria(nombre: AutoCategorizador.nombreLocalizado(c.clave),
-                                      icono: c.icono, colorHex: c.color, esPredeterminada: true))
+                                      icono: c.icono, colorHex: c.color,
+                                      esPredeterminada: true, claveBase: c.clave))
         }
         try? contexto.save()
     }
@@ -99,8 +100,9 @@ enum Persistencia {
                 huboCambios = true
             } else {
                 porClave[clave] = cat
-                // Categoría base: mostrarla siempre en el idioma del dispositivo.
+                // Categoría base: backfill de claveBase y nombre en el idioma actual.
                 if base.contains(where: { $0.clave == clave }) {
+                    if cat.claveBase != clave { cat.claveBase = clave; huboCambios = true }
                     let localizado = AutoCategorizador.nombreLocalizado(clave)
                     if cat.nombre != localizado {
                         cat.nombre = localizado
@@ -110,5 +112,24 @@ enum Persistencia {
             }
         }
         if huboCambios { try? contexto.save() }
+    }
+}
+
+extension Tarjeta {
+    /// Busca una tarjeta por nombre (sin distinguir mayúsculas/espacios) o la crea.
+    /// Permite auto-registrar la tarjeta cuando llega un pago con una nueva.
+    static func obtenerOCrear(nombre: String, contexto: ModelContext) -> Tarjeta? {
+        let limpio = nombre.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !limpio.isEmpty else { return nil }
+        let clave = limpio.folding(options: [.diacriticInsensitive, .caseInsensitive],
+                                   locale: Locale(identifier: "es")).lowercased()
+        let todas = (try? contexto.fetch(FetchDescriptor<Tarjeta>())) ?? []
+        if let t = todas.first(where: {
+            $0.nombre.folding(options: [.diacriticInsensitive, .caseInsensitive],
+                              locale: Locale(identifier: "es")).lowercased() == clave
+        }) { return t }
+        let nueva = Tarjeta(nombre: limpio)
+        contexto.insert(nueva)
+        return nueva
     }
 }

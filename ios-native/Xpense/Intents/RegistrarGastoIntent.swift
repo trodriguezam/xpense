@@ -11,9 +11,10 @@ struct RegistrarGastoIntent: AppIntent {
 
     @Parameter(title: "Monto (CLP)") var monto: Double
     @Parameter(title: "Comercio") var comercio: String
+    @Parameter(title: "Tarjeta") var tarjeta: String?
 
     static var parameterSummary: some ParameterSummary {
-        Summary("Registrar \(\.$monto) en \(\.$comercio)")
+        Summary("Registrar \(\.$monto) en \(\.$comercio) con \(\.$tarjeta)")
     }
 
     @MainActor
@@ -22,20 +23,22 @@ struct RegistrarGastoIntent: AppIntent {
         Persistencia.sembrarSiHaceFalta(contexto)
 
         let cats = (try? contexto.fetch(FetchDescriptor<Categoria>())) ?? []
-        // Primero lo que el usuario corrigió antes para este comercio; luego las reglas.
         let otros = AutoCategorizador.nombreLocalizado("Otros")
-        let categoria = AutoCategorizador.categoriaPrevia(comercio: comercio, contexto: contexto)
-            ?? AutoCategorizador.sugerir(comercio: comercio, entre: cats)
-            ?? cats.first(where: { $0.nombre == otros })
+        // Usa lo aprendido (categoría + alias de nombre) y, si no, las reglas base.
+        let sugerencia = AutoCategorizador.sugerencia(comercio: comercio, entre: cats, contexto: contexto)
+        let categoria = sugerencia.categoria ?? cats.first(where: { $0.nombre == otros })
+        let nombreComercio = sugerencia.nombre ?? (comercio.isEmpty ? "Apple Pay" : comercio)
+        let tj = (tarjeta?.isEmpty == false) ? Tarjeta.obtenerOCrear(nombre: tarjeta!, contexto: contexto) : nil
 
         let tx = Transaccion(monto: Int(monto.rounded()),
-                             comercio: comercio.isEmpty ? "Apple Pay" : comercio,
+                             comercio: nombreComercio,
                              origen: "applepay",
-                             categoria: categoria)
+                             categoria: categoria,
+                             tarjeta: tj)
         contexto.insert(tx)
         SnapshotWidget.trasCambio(contexto: contexto)
 
-        let nombreCat = categoria?.nombre ?? "Otros"
+        let nombreCat = categoria?.nombre ?? otros
         return .result(dialog: "Anotado: \(clp(tx.monto)) en \(nombreCat).")
     }
 }

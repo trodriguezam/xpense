@@ -14,6 +14,8 @@ struct RootView: View {
                 .tabItem { Label("Gastos", systemImage: "list.bullet") }
             CategoriasView()
                 .tabItem { Label("Categorías", systemImage: "circle.grid.2x2.fill") }
+            TarjetasView()
+                .tabItem { Label("Tarjetas", systemImage: "creditcard.fill") }
             AjustesView()
                 .tabItem { Label("Ajustes", systemImage: "gearshape.fill") }
         }
