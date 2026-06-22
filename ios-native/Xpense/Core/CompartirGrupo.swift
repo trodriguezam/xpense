@@ -12,9 +12,9 @@ import os
 enum CompartirGrupo {
     private static let log = Logger(subsystem: "cl.trodriguezam.xpense", category: "CompartirGrupo")
 
-    /// El contenedor de CloudKit del grupo compartido. Debe calzar con
-    /// `com.apple.developer.icloud-container-identifiers` en los entitlements.
-    static let contenedor = CKContainer(identifier: "iCloud.cl.trodriguezam.xpense")
+    /// El contenedor de CloudKit del grupo compartido — el DEDICADO a grupos, no el
+    /// de SwiftData. Debe calzar con `StoreCompartido.contenedorICloud`.
+    static let contenedor = CKContainer(identifier: StoreCompartido.contenedorICloud)
 
     /// Acepta una invitación a un grupo compartido (la app fue lanzada desde el
     /// link del CKShare). Usa la API oficial de NSPersistentCloudKitContainer, que

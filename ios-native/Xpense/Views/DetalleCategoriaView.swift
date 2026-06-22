@@ -3,10 +3,13 @@ import SwiftData
 
 struct DetalleCategoriaView: View {
     @Environment(\.modelContext) private var contexto
+    @Environment(\.dismiss) private var cerrar
     @Bindable var categoria: Categoria
 
     @State private var tieneLimite = false
     @State private var limiteTexto = ""
+    @State private var editarTx: Transaccion?
+    @State private var confirmarBorrado = false
 
     private var limite: Int { Int(limiteTexto.filter(\.isNumber)) ?? 0 }
     private var estado: EstadoCategoria { MotorPresupuesto.estado(categoria, contexto: contexto) }
@@ -38,6 +41,12 @@ struct DetalleCategoriaView: View {
                     ? Text("Gastado esta semana") : Text("Gastado este mes")
             }
 
+            Section("Nombre e ícono") {
+                TextField("Nombre", text: $categoria.nombre)
+                SelectorIconoColor(icono: $categoria.icono, colorHex: $categoria.colorHex)
+                    .padding(.vertical, 4)
+            }
+
             Section("Límite") {
                 Toggle("Definir un límite", isOn: $tieneLimite)
                 if tieneLimite {
@@ -64,8 +73,24 @@ struct DetalleCategoriaView: View {
                 if txsPeriodo.isEmpty {
                     Text("Nada por aquí todavía.").foregroundStyle(Paleta.piedra)
                 } else {
-                    ForEach(txsPeriodo) { FilaTransaccion(tx: $0) }
+                    ForEach(txsPeriodo) { tx in
+                        Button { editarTx = tx } label: {
+                            FilaTransaccion(tx: tx).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .swipeEliminar {
+                            contexto.delete(tx)
+                            SnapshotWidget.trasCambio(contexto: contexto)
+                        }
+                    }
                 }
+            }
+
+            Section {
+                Button("Eliminar categoría", role: .destructive) { confirmarBorrado = true }
+                    .frame(maxWidth: .infinity)
+            } footer: {
+                Text("Los gastos de esta categoría no se borran: quedan sin categoría.")
             }
         }
         .scrollDismissesKeyboard(.interactively)
@@ -73,6 +98,17 @@ struct DetalleCategoriaView: View {
         .background(Paleta.bruma)
         .navigationTitle(categoria.nombre)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(item: $editarTx) { AgregarGastoView(transaccion: $0) }
+        .alert("¿Eliminar esta categoría?", isPresented: $confirmarBorrado) {
+            Button("Eliminar", role: .destructive) {
+                contexto.delete(categoria)
+                SnapshotWidget.trasCambio(contexto: contexto)
+                cerrar()
+            }
+            Button("Cancelar", role: .cancel) {}
+        } message: {
+            Text("Los gastos de esta categoría quedan sin categoría. Esto no se puede deshacer.")
+        }
         .onAppear {
             tieneLimite = (categoria.limiteMonto ?? 0) > 0
             limiteTexto = categoria.limiteMonto.map(String.init) ?? ""

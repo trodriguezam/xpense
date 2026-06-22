@@ -69,6 +69,9 @@ final class Tarjeta {
 final class Grupo {
     var nombre: String = ""
     var creadoEl: Date = Date.now
+    /// Enlace al espejo Core Data (`GrupoCompartidoMO`) cuando el grupo se comparte
+    /// vía CKShare. nil = grupo solo local, aún no compartido.
+    var idCompartido: String?
     @Relationship(deleteRule: .cascade, inverse: \Persona.grupo)
     var personas: [Persona]? = []
 

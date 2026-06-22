@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import CloudKit
 
 /// Grupos de gastos compartidos (familia, arrendatarios…). Cada grupo tiene
 /// personas, y las tarjetas de cada persona pueden aportar a un "pozo común".
@@ -51,7 +52,7 @@ struct GruposView: View {
                 }
             }
             .background(Paleta.bruma)
-            .navigationTitle("Grupo")
+            .navigationTitle("Grupos")
             .navigationDestination(for: Grupo.self) { DetalleGrupoView(grupo: $0) }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -91,6 +92,8 @@ struct DetalleGrupoView: View {
     @State private var mostrarNuevaPersona = false
     @State private var nombrePersona = ""
     @State private var confirmarBorrado = false
+    @State private var errorCompartir: String?
+    @State private var preparandoCompartir = false
 
     private var personas: [Persona] {
         (grupo.personas ?? []).sorted { ($0.esYo ? 0 : 1, $0.nombre) < ($1.esYo ? 0 : 1, $1.nombre) }
@@ -164,11 +167,36 @@ struct DetalleGrupoView: View {
             }
 
             Section {
+                Button {
+                    Task { await invitar() }
+                } label: {
+                    HStack {
+                        Label("Invitar personas", systemImage: "person.crop.circle.badge.plus")
+                        Spacer()
+                        if preparandoCompartir { ProgressView() }
+                    }
+                }
+                .disabled(preparandoCompartir)
+            } header: {
+                Text("Compartir")
+            } footer: {
+                Text(grupo.idCompartido == nil
+                     ? "Invita a otras personas por iCloud para que vean el pozo común en sus equipos. Cada quien edita solo sus gastos."
+                     : "Este grupo ya se comparte. Vuelve a tocar para gestionar a quién invitaste.")
+            }
+
+            Section {
                 Button("Eliminar grupo", role: .destructive) { confirmarBorrado = true }
                     .frame(maxWidth: .infinity)
             } footer: {
                 Text("Las tarjetas no se borran; solo dejan de pertenecer a una persona.")
             }
+        }
+        .alert("No se pudo compartir", isPresented: Binding(
+            get: { errorCompartir != nil }, set: { if !$0 { errorCompartir = nil } })) {
+            Button("Entendido", role: .cancel) {}
+        } message: {
+            Text(errorCompartir ?? "")
         }
         .scrollContentBackground(.hidden)
         .background(Paleta.bruma)
@@ -202,6 +230,41 @@ struct DetalleGrupoView: View {
         nombrePersona = ""
         SnapshotWidget.trasCambio(contexto: contexto)
     }
+
+    /// Asegura el espejo Core Data del grupo, crea (o reusa) su CKShare y presenta
+    /// la hoja de invitación. CKShare solo funciona con iCloud real (no simulador):
+    /// si falla, mostramos el error con calma en vez de caernos.
+    @MainActor
+    private func invitar() async {
+        preparandoCompartir = true
+        defer { preparandoCompartir = false }
+        // CloudKit debe haber terminado su setup antes de `container.share`, o el
+        // framework hace fatalError (no atrapable). Esperamos con timeout.
+        guard await StoreCompartido.shared.esperarMirroring() else {
+            errorCompartir = String(localized: "iCloud todavía se está preparando. Intenta de nuevo en unos segundos.")
+            return
+        }
+        do {
+            let usuarioID = await CompartirGrupo.miUsuarioID()
+            let mo = StoreCompartido.shared.espejo(idCompartido: grupo.idCompartido,
+                                                   nombre: grupo.nombre, usuarioID: usuarioID)
+            if grupo.idCompartido == nil {
+                grupo.idCompartido = mo.id
+                try? contexto.save()
+            }
+            if let existente = CompartirGrupo.shareExistente(de: mo) {
+                PresentadorCompartir.presentar(share: existente,
+                                               container: CompartirGrupo.contenedor,
+                                               titulo: grupo.nombre)
+            } else {
+                let (share, contenedor) = try await CompartirGrupo.compartir(mo)
+                PresentadorCompartir.presentar(share: share, container: contenedor,
+                                               titulo: grupo.nombre)
+            }
+        } catch {
+            errorCompartir = error.localizedDescription
+        }
+    }
 }
 
 struct FilaAportePersona: View {
@@ -214,8 +277,13 @@ struct FilaAportePersona: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
-                Text(esYo ? "\(nombre) (tú)" : nombre)
-                    .font(.subheadline.weight(.medium)).foregroundStyle(Paleta.corteza)
+                // Cada rama es su propio Text: así el literal interpolado usa
+                // LocalizedStringKey (`%@ (tú)`) y el "(tú)" sí se traduce. Con el
+                // ternario en uno solo, Swift lo trata como String sin localizar.
+                Group {
+                    if esYo { Text("\(nombre) (tú)") } else { Text(nombre) }
+                }
+                .font(.subheadline.weight(.medium)).foregroundStyle(Paleta.corteza)
                 Spacer()
                 Text(clp(aporte)).font(.subheadline).foregroundStyle(Paleta.piedra)
             }

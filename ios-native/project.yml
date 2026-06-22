@@ -26,7 +26,12 @@ targets:
       properties:
         com.apple.security.application-groups: [group.cl.trodriguezam.xpense]
         com.apple.developer.icloud-services: [CloudKit]
-        com.apple.developer.icloud-container-identifiers: [iCloud.cl.trodriguezam.xpense]
+        # Dos contenedores CloudKit DISTINTOS: el primero lo usa SwiftData (datos
+        # privados de la app); el segundo, el store NSPCC de grupos compartidos
+        # (CKShare). Compartir el mismo contenedor entre ambos rompe el mirroring
+        # del segundo y revienta `container.share(...)`. El orden importa: SwiftData
+        # `.automatic` toma el primero.
+        com.apple.developer.icloud-container-identifiers: [iCloud.cl.trodriguezam.xpense, iCloud.cl.trodriguezam.xpense.grupos]
     info:
       path: Xpense/Info.plist
       properties:

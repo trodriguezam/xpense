@@ -49,7 +49,10 @@ final class AporteCompartidoMO: NSManagedObject {
 final class StoreCompartido {
     static let shared = StoreCompartido()
     private static let log = Logger(subsystem: "cl.trodriguezam.xpense", category: "StoreCompartido")
-    private static let contenedorICloud = "iCloud.cl.trodriguezam.xpense"
+    // Contenedor CloudKit DEDICADO a los grupos compartidos. Debe ser distinto del
+    // que usa SwiftData (`iCloud.cl.trodriguezam.xpense`): dos NSPCC/mirroring sobre
+    // el mismo contenedor entran en conflicto y `container.share(...)` revienta.
+    static let contenedorICloud = "iCloud.cl.trodriguezam.xpense.grupos"
 
     let container: NSPersistentCloudKitContainer
     var contexto: NSManagedObjectContext { container.viewContext }
@@ -64,10 +67,33 @@ final class StoreCompartido {
             .first { $0.url?.lastPathComponent == Self.archivoCompartido }
     }
 
+    /// La tienda de la base **privada** (mis grupos). Con dos stores, los objetos
+    /// nuevos hay que asignarlos explícitamente a uno o Core Data no sabe a cuál
+    /// van y `container.share` falla.
+    var tiendaPrivada: NSPersistentStore? {
+        container.persistentStoreCoordinator.persistentStores
+            .first { $0.url?.lastPathComponent == Self.archivoPrivado }
+    }
+
+    /// `true` cuando el mirroring de CloudKit terminó su **setup** inicial. Antes de
+    /// eso NO se puede llamar `container.share(...)`: el delegate de mirroring aún es
+    /// nil y el framework hace `fatalError` (no se puede atrapar). Ver `esperarMirroring`.
+    private(set) var mirroringListo = false
+
     private init() {
         container = NSPersistentCloudKitContainer(name: "Compartido",
                                                   managedObjectModel: StoreCompartido.modelo())
         configurarStores()
+        // Observa los eventos del mirroring para saber cuándo el setup terminó.
+        NotificationCenter.default.addObserver(
+            forName: NSPersistentCloudKitContainer.eventChangedNotification,
+            object: container, queue: .main) { [weak self] nota in
+            guard let evento = nota.userInfo?[NSPersistentCloudKitContainer.eventNotificationUserInfoKey]
+                    as? NSPersistentCloudKitContainer.Event else { return }
+            if evento.type == .setup, evento.endDate != nil, evento.error == nil {
+                self?.mirroringListo = true
+            }
+        }
         container.loadPersistentStores { desc, error in
             if let error {
                 StoreCompartido.log.error("No se pudo cargar el store compartido (\(desc.url?.lastPathComponent ?? "?", privacy: .public)): \(error.localizedDescription, privacy: .public)")
@@ -75,7 +101,21 @@ final class StoreCompartido {
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-        try? container.viewContext.setQueryGenerationFrom(.current)
+    }
+
+    /// Espera (con timeout) a que el mirroring de CloudKit esté listo para compartir.
+    /// Devuelve `true` si quedó listo. Evita el `fatalError` de `container.share`
+    /// cuando se toca "Invitar" justo al abrir la app, antes de que CloudKit arranque.
+    func esperarMirroring(timeout: TimeInterval = 12) async -> Bool {
+        if mirroringListo { return true }
+        let pasoNanos: UInt64 = 400_000_000   // 0.4 s
+        var transcurrido: TimeInterval = 0
+        while transcurrido < timeout {
+            try? await Task.sleep(nanoseconds: pasoNanos)
+            transcurrido += 0.4
+            if mirroringListo { return true }
+        }
+        return mirroringListo
     }
 
     /// Dos descripciones de store apuntando al MISMO contenedor de CloudKit: una a
@@ -101,6 +141,42 @@ final class StoreCompartido {
         guard contexto.hasChanges else { return }
         do { try contexto.save() }
         catch { Self.log.error("Error guardando store compartido: \(error.localizedDescription, privacy: .public)") }
+    }
+
+    // MARK: - Espejo del grupo local
+
+    /// Devuelve el espejo Core Data del grupo local (por `idCompartido`), creándolo
+    /// la primera vez junto con el miembro "dueño" (yo). Es lo que se comparte por
+    /// CKShare. No referencia la `Transaccion` privada: vive en otra zona/cuenta.
+    func espejo(idCompartido: String?, nombre: String, usuarioID: String?) -> GrupoCompartidoMO {
+        if let idCompartido, let existente = buscarGrupo(id: idCompartido) {
+            return existente
+        }
+        let g = GrupoCompartidoMO(context: contexto)
+        g.id = idCompartido ?? UUID().uuidString
+        g.nombre = nombre
+        g.creadoEl = Date()
+        let yo = MiembroGrupoMO(context: contexto)
+        yo.id = UUID().uuidString
+        yo.nombre = String(localized: "Yo")
+        yo.usuarioID = usuarioID
+        yo.rol = "dueno"
+        yo.grupo = g
+        // Con stores privado+compartido, asignar explícitamente al privado: si no,
+        // Core Data no sabe a cuál store va el objeto nuevo y `share(...)` revienta.
+        if let priv = tiendaPrivada {
+            contexto.assign(g, to: priv)
+            contexto.assign(yo, to: priv)
+        }
+        guardar()
+        return g
+    }
+
+    func buscarGrupo(id: String) -> GrupoCompartidoMO? {
+        let req = NSFetchRequest<GrupoCompartidoMO>(entityName: "GrupoCompartido")
+        req.predicate = NSPredicate(format: "id == %@", id)
+        req.fetchLimit = 1
+        return try? contexto.fetch(req).first
     }
 
     // MARK: - Modelo programático

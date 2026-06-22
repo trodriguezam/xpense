@@ -26,6 +26,7 @@
 		7E971A24DD4683DCBCFA3A07 /* XpenseWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AF81D81F3E82AFF365A165AC /* XpenseWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9913E2348A601C35852830FE /* AgregarGastoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046703222621730FCAB3B73F /* AgregarGastoView.swift */; };
 		A1E3B4EEFF1CD3F0AB110F20 /* AjustesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB0310C89270CB705AB950D /* AjustesView.swift */; };
+		A28D8565E05CFA2E80798FB0 /* CloudSharingSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70318E66881D89E806B070D9 /* CloudSharingSheet.swift */; };
 		B82B0E7E5341A396D1B25BC4 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 8B24F166E655DE7E1F81C967 /* AppIcon.icon */; };
 		BBD895B0E1FE831E386C684A /* TransaccionesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86FF000097B29002D87CDBA /* TransaccionesView.swift */; };
 		C98FCE998227C74CD04732F9 /* CompartirGrupo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F20A3B08981CD1E03EC5A /* CompartirGrupo.swift */; };
@@ -82,6 +83,7 @@
 		5CB30AA02759F4E1FF1B00C1 /* TarjetasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarjetasView.swift; sourceTree = "<group>"; };
 		5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriasView.swift; sourceTree = "<group>"; };
 		66F34E409525145482F225F8 /* Xpense.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xpense.entitlements; sourceTree = "<group>"; };
+		70318E66881D89E806B070D9 /* CloudSharingSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSharingSheet.swift; sourceTree = "<group>"; };
 		72E4014E4901985350FD5E82 /* AutoCategorizador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCategorizador.swift; sourceTree = "<group>"; };
 		78F0BADC927561F933CBE13B /* PermisosCompartirTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermisosCompartirTests.swift; sourceTree = "<group>"; };
 		89117E545B670D5232F1157A /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				046703222621730FCAB3B73F /* AgregarGastoView.swift */,
 				9CB0310C89270CB705AB950D /* AjustesView.swift */,
 				5E6FD220BC5A9080C6B4B1E5 /* CategoriasView.swift */,
+				70318E66881D89E806B070D9 /* CloudSharingSheet.swift */,
 				9FF33714C9803E0209D91FF6 /* DetalleCategoriaView.swift */,
 				239C922FE55589DCEEAE1367 /* DetalleTarjetaView.swift */,
 				33C7A07A1DCBA558399229B5 /* GruposView.swift */,
@@ -371,6 +374,7 @@
 				4B81027FB8F16052A5613589 /* AutoCategorizador.swift in Sources */,
 				56FB9337A53696A572A302A3 /* Avisos.swift in Sources */,
 				D3CC8127C68187FB33661242 /* CategoriasView.swift in Sources */,
+				A28D8565E05CFA2E80798FB0 /* CloudSharingSheet.swift in Sources */,
 				C98FCE998227C74CD04732F9 /* CompartirGrupo.swift in Sources */,
 				2E5D8FC0E87C59D486902D89 /* DetalleCategoriaView.swift in Sources */,
 				45DB6E64BAAC276B7DD458C7 /* DetalleTarjetaView.swift in Sources */,

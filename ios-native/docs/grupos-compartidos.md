@@ -80,8 +80,14 @@ permitir editar/borrar.
 
 ## Configuración
 
-- Entitlements: ya están `CloudKit` + `icloud-container-identifiers`
-  (`iCloud.cl.trodriguezam.xpense`).
+- Entitlements: `CloudKit` + **DOS** `icloud-container-identifiers`:
+  `iCloud.cl.trodriguezam.xpense` (SwiftData, datos privados — va primero) y
+  `iCloud.cl.trodriguezam.xpense.grupos` (NSPCC de grupos compartidos). **Deben ser
+  contenedores distintos**: si SwiftData y el NSPCC comparten contenedor, el mirroring
+  del segundo no inicializa y `container.share(...)` revienta con un fatalError
+  (`nil while implicitly unwrapping`). Verificado en device el 22-jun-2026. Un
+  contenedor recién provisionado da `CKError 1014 "Bad Container"` un par de minutos
+  hasta que propaga en los servidores de Apple; luego la hoja de compartir funciona.
 - Info.plist: `CKSharingSupported = true` (agregado, permite lanzar la app desde el
   link del share).
 - `UIBackgroundModes: remote-notification` (ya está) para sync silencioso.
@@ -111,6 +117,15 @@ real es lo único que exige hardware.
     `AporteCompartidoMO`). Degrada a local sin iCloud.
   - ✅ `CompartirGrupo`: `aceptarInvitacion` (vía `acceptShareInvitations`), `compartir`
     (crea el `CKShare` con `container.share`), `shareExistente`, `miUsuarioID`.
-  - ⏳ Falta: reconectar `GruposView`/`MotorPresupuesto.pozo` para leer/escribir en el
-    store compartido (o espejar el `Grupo` local al compartido al activar compartir).
-- ⏳ Fase 2c: UI de invitar (`UICloudSharingController`) + sync en vivo + prueba en 2 equipos.
+  - ✅ Espejo del grupo local: `Grupo.idCompartido` enlaza al `GrupoCompartidoMO`;
+    `StoreCompartido.espejo(...)` lo crea con su miembro **dueño** (yo) la primera vez
+    que se invita.
+  - ⏳ Falta (no bloquea invitar): crear `AporteCompartido` espejo al guardar un gasto
+    cuya tarjeta aporta, y que `MotorPresupuesto.pozo` lea del store compartido cuando
+    el grupo está compartido. Hoy el pozo sigue calculándose sobre datos locales.
+- 🟡 Fase 2c (UI lista, compila, **sin verificar en hardware**):
+  - ✅ `CloudSharingSheet.swift`: envuelve `UICloudSharingController` en SwiftUI.
+  - ✅ Botón **"Invitar personas"** en `DetalleGrupoView` → crea/espeja el grupo, crea el
+    `CKShare` y presenta la hoja. En simulador (sin iCloud) degrada con un aviso amable
+    (`CKAccountStatusNoAccount`), no se cae.
+  - ⏳ Falta: **probar el sync real en 2 equipos** con 2 Apple IDs (ver Plan de prueba).

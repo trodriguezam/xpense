@@ -6,36 +6,25 @@ struct CategoriasView: View {
     @Query(sort: \Categoria.nombre) private var categorias: [Categoria]
     @State private var mostrarNueva = false
 
+    /// (categoría, estado) ordenadas; se parten en dos grupos: con y sin gastos
+    /// este periodo. Las con gastos van arriba.
+    private var porGrupo: (con: [(Categoria, EstadoCategoria)], sin: [(Categoria, EstadoCategoria)]) {
+        let estados = categorias.map { ($0, MotorPresupuesto.estado($0, contexto: contexto)) }
+        return (estados.filter { $0.1.gastado > 0 }, estados.filter { $0.1.gastado == 0 })
+    }
+
     var body: some View {
         NavigationStack {
             List {
-                ForEach(categorias) { cat in
-                    NavigationLink(value: cat) {
-                        let e = MotorPresupuesto.estado(cat, contexto: contexto)
-                        HStack(spacing: 12) {
-                            IconoCategoria(icono: cat.icono, colorHex: cat.colorHex)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text(cat.nombre).foregroundStyle(Paleta.corteza)
-                                if let lim = cat.limiteMonto, lim > 0 {
-                                    Text("\(clp(e.gastado)) de \(clp(lim)) · \(cat.periodoEnum.etiqueta.lowercased())")
-                                        .font(.caption).foregroundStyle(Paleta.piedra)
-                                } else {
-                                    Text("\(clp(e.gastado)) este mes · sin límite")
-                                        .font(.caption).foregroundStyle(Paleta.piedra)
-                                }
-                            }
-                        }
+                let grupos = porGrupo
+                if !grupos.con.isEmpty {
+                    Section("Con gastos") {
+                        ForEach(grupos.con, id: \.0.persistentModelID) { fila($0.0, $0.1) }
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        if !cat.esPredeterminada {
-                            Button(role: .destructive) {
-                                contexto.delete(cat)
-                                SnapshotWidget.trasCambio(contexto: contexto)
-                            } label: {
-                                Label("Eliminar", systemImage: "trash")
-                            }
-                            .tint(Paleta.teja)
-                        }
+                }
+                if !grupos.sin.isEmpty {
+                    Section(grupos.con.isEmpty ? "" : "Sin gastos aún") {
+                        ForEach(grupos.sin, id: \.0.persistentModelID) { fila($0.0, $0.1) }
                     }
                 }
             }
@@ -51,6 +40,29 @@ struct CategoriasView: View {
             .sheet(isPresented: $mostrarNueva) { NuevaCategoriaView() }
         }
     }
+
+    @ViewBuilder
+    private func fila(_ cat: Categoria, _ e: EstadoCategoria) -> some View {
+        NavigationLink(value: cat) {
+            HStack(spacing: 12) {
+                IconoCategoria(icono: cat.icono, colorHex: cat.colorHex)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(cat.nombre).foregroundStyle(Paleta.corteza)
+                    if let lim = cat.limiteMonto, lim > 0 {
+                        Text("\(clp(e.gastado)) de \(clp(lim)) · \(cat.periodoEnum.etiqueta.lowercased())")
+                            .font(.caption).foregroundStyle(Paleta.piedra)
+                    } else {
+                        Text("\(clp(e.gastado)) este mes · sin límite")
+                            .font(.caption).foregroundStyle(Paleta.piedra)
+                    }
+                }
+            }
+        }
+        .swipeEliminar {
+            contexto.delete(cat)
+            SnapshotWidget.trasCambio(contexto: contexto)
+        }
+    }
 }
 
 struct NuevaCategoriaView: View {
@@ -60,36 +72,17 @@ struct NuevaCategoriaView: View {
     @State private var icono = "leaf.fill"
     @State private var colorHex = "#5E7561"
 
-    private let iconos = ["leaf.fill","cart.fill","cup.and.saucer.fill","bus.fill","fuelpump.fill",
-                          "bolt.fill","cross.case.fill","popcorn.fill","bag.fill","house.fill",
-                          "pawprint.fill","book.fill","gift.fill","airplane","figure.run","tshirt.fill"]
-    private let colores = ["#5E7561","#8A6E4B","#6E8B8F","#B5704F","#A9BFA8",
-                           "#9C7B9E","#C2A36B","#8FA08A","#7C8577","#2F3A2E"]
-
     var body: some View {
         NavigationStack {
             Form {
                 Section("Nombre") { TextField("Ej: Mascotas", text: $nombre) }
-                Section("Ícono") {
-                    LazyVGrid(columns: Array(repeating: .init(.flexible()), count: 6), spacing: 12) {
-                        ForEach(iconos, id: \.self) { i in
-                            Image(systemName: i)
-                                .frame(width: 40, height: 40)
-                                .background(Circle().fill(i == icono ? Color(hex: colorHex) : Paleta.arena))
-                                .foregroundStyle(i == icono ? .white : Paleta.corteza)
-                                .onTapGesture { icono = i }
-                        }
+                Section {
+                    HStack(spacing: 12) {
+                        IconoCategoria(icono: icono, colorHex: colorHex)
+                        Text(nombre.isEmpty ? String(localized: "Tu categoría") : nombre)
+                            .foregroundStyle(Paleta.corteza)
                     }
-                }
-                Section("Color") {
-                    HStack {
-                        ForEach(colores, id: \.self) { c in
-                            Circle().fill(Color(hex: c))
-                                .frame(width: 30, height: 30)
-                                .overlay(Circle().strokeBorder(.white, lineWidth: c == colorHex ? 3 : 0))
-                                .onTapGesture { colorHex = c }
-                        }
-                    }
+                    SelectorIconoColor(icono: $icono, colorHex: $colorHex)
                 }
             }
             .scrollDismissesKeyboard(.interactively)

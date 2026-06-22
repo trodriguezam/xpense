@@ -27,6 +27,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             List {
+                // Saludo: flota sobre la bruma, sin contenedor.
                 Section {
                     VStack(alignment: .leading, spacing: 6) {
                         Text(saludo)
@@ -36,9 +37,13 @@ struct HomeView: View {
                             .font(.system(.largeTitle, design: .serif).weight(.medium))
                             .foregroundStyle(Paleta.corteza)
                     }
-                    .padding(.top, 8)
-                    .listRowFondoTransparente()
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 8, leading: 20, bottom: 2, trailing: 20))
+                }
 
+                // Gastado este mes: contenedor inset-grouped como el resto de la app.
+                Section {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("GASTADO ESTE MES")
                             .font(.caption2.weight(.semibold))
@@ -52,20 +57,15 @@ struct HomeView: View {
                             .foregroundStyle(Paleta.musgo)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .tarjeta()
-                    .listRowFondoTransparente()
+                    .padding(.vertical, 6)
+                }
 
+                Section {
                     if !estados.isEmpty {
-                        VStack(alignment: .leading, spacing: 14) {
-                            Text("Tus límites")
-                                .font(.system(.title3, design: .serif).weight(.medium))
-                                .foregroundStyle(Paleta.corteza)
-                            ForEach(estados) { e in
-                                FilaPresupuesto(estado: e)
-                            }
+                        ForEach(estados) { e in
+                            FilaPresupuesto(estado: e)
+                                .padding(.vertical, 4)
                         }
-                        .tarjeta()
-                        .listRowFondoTransparente()
                     } else {
                         VStack(spacing: 8) {
                             Image(systemName: "leaf")
@@ -77,39 +77,26 @@ struct HomeView: View {
                                 .foregroundStyle(Paleta.piedra)
                         }
                         .frame(maxWidth: .infinity)
-                        .tarjeta()
-                        .listRowFondoTransparente()
+                        .padding(.vertical, 6)
                     }
+                } header: {
+                    encabezado("Tus límites")
                 }
 
                 if !transacciones.isEmpty {
                     Section {
                         ForEach(transacciones.prefix(5)) { tx in
                             Button { editarTx = tx } label: {
-                                FilaTransaccion(tx: tx)
-                                    .padding(.vertical, 12)
-                                    .padding(.horizontal, 14)
-                                    .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                        .fill(Paleta.superficie))
-                                    .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                        .strokeBorder(Paleta.arena, lineWidth: 1))
-                                    .contentShape(Rectangle())
+                                FilaTransaccion(tx: tx).contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                            .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                             .swipeEliminar { eliminar(tx) }
                         }
                     } header: {
-                        Text("Últimos movimientos")
-                            .font(.system(.title3, design: .serif).weight(.medium))
-                            .foregroundStyle(Paleta.corteza)
-                            .textCase(nil)
+                        encabezado("Últimos movimientos")
                     }
                 }
             }
-            .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(Paleta.bruma)
             .toolbar {
@@ -133,6 +120,15 @@ struct HomeView: View {
     private func eliminar(_ tx: Transaccion) {
         contexto.delete(tx)
         SnapshotWidget.trasCambio(contexto: contexto)
+    }
+
+    /// Encabezado de sección con la voz de la app (serif, sin mayúsculas forzadas).
+    private func encabezado(_ titulo: LocalizedStringKey) -> some View {
+        Text(titulo)
+            .font(.system(.title3, design: .serif).weight(.medium))
+            .foregroundStyle(Paleta.corteza)
+            .textCase(nil)
+            .padding(.top, 4)
     }
 }
 
