@@ -35,12 +35,33 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
 
     // MARK: - Grupos compartidos (CKShare)
 
-    /// Punto de entrada oficial cuando el usuario toca el link de invitación a un
-    /// grupo compartido. iOS lanza la app con la metadata del CKShare; aquí se
-    /// acepta y se enchufa al store compartido (Fase 2b). Requiere
-    /// `CKSharingSupported = true` en Info.plist.
+    /// En una app SwiftUI (lifecycle por **escena**), iOS entrega la metadata del
+    /// CKShare a la **scene delegate**, NO a la app delegate. Por eso hay que vender
+    /// una `SceneDelegate` aquí; si no, tocar el link "abre la app y no pasa nada".
     func application(_ application: UIApplication,
-                     userDidAcceptCloudKitShareWith metadata: CKShare.Metadata) {
-        CompartirGrupo.aceptarInvitacion(metadata)
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
+        config.delegateClass = SceneDelegate.self
+        return config
+    }
+}
+
+/// Recibe la invitación a un grupo compartido (CKShare). Maneja los dos casos:
+/// app **abierta** (`userDidAcceptCloudKitShareWith`) y app **lanzada desde cero**
+/// por el link (`connectionOptions.cloudKitShareMetadata`). Requiere
+/// `CKSharingSupported = true` en Info.plist. No crea ventana: de eso se encarga
+/// SwiftUI; aquí solo aceptamos la invitación.
+final class SceneDelegate: NSObject, UIWindowSceneDelegate {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        if let metadata = connectionOptions.cloudKitShareMetadata {
+            CompartirGrupo.aceptarInvitacion(metadata)
+        }
+    }
+
+    func windowScene(_ windowScene: UIWindowScene,
+                     userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
+        CompartirGrupo.aceptarInvitacion(cloudKitShareMetadata)
     }
 }

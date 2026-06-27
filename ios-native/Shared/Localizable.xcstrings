@@ -1,2387 +1,2415 @@
 {
-  "sourceLanguage" : "es",
-  "strings" : {
-    "¡Listo!" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All set!"
+  "sourceLanguage": "es",
+  "strings": {
+    "¡Listo!": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All set!"
           }
         }
       }
     },
-    "¿Eliminar esta categoría?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete this category?"
+    "¿Eliminar esta categoría?": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this category?"
           }
         }
       }
     },
-    "¿Eliminar esta tarjeta?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete this card?"
+    "¿Eliminar esta tarjeta?": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this card?"
           }
         }
       }
     },
-    "¿Eliminar este gasto?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete this expense?"
+    "¿Eliminar este gasto?": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this expense?"
           }
         }
       }
     },
-    "¿Eliminar este grupo?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete this group?"
+    "¿Eliminar este grupo?": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete this group?"
           }
         }
       }
     },
-    "%@ (tú)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ (you)"
+    "%@ (tú)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ (you)"
           }
         }
       }
     },
-    "%@ de %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ of %2$@"
+    "%@ de %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ of %2$@"
           }
         }
       }
     },
-    "%@ de %@ · %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ of %2$@ · %3$@"
+    "%@ de %@ · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ of %2$@ · %3$@"
           }
         }
       }
     },
-    "%@ de %@ este mes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ of %2$@ this month"
+    "%@ de %@ este mes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ of %2$@ this month"
           }
         }
       }
     },
-    "%@ en el pozo este mes · %@ personas" : {
-      "localizations" : {
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ en el pozo este mes · %2$@ personas"
+    "%@ en el pozo este mes · %@ personas": {
+      "localizations": {
+        "es": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ en el pozo este mes · %2$@ personas"
           }
         }
       }
     },
-    "%@ en el pozo este mes · %lld personas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ in the pool this month · %2$lld people"
+    "%@ en el pozo este mes · %lld personas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ in the pool this month · %2$lld people"
           }
         }
       }
     },
-    "%@ este mes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ this month"
+    "%@ este mes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ this month"
           }
         }
       }
     },
-    "%@ este mes · sin límite" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ this month · no limit"
+    "%@ este mes · sin límite": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ this month · no limit"
           }
         }
       }
     },
-    "%@ tarjetas" : {
-
+    "%@ tarjetas": {},
+    "%lld tarjetas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld cards"
+          }
+        }
+      }
+    },
+    "✓ Cantidad": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Amount"
+          }
+        }
+      }
+    },
+    "✓ Comerciante": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "✓ Merchant"
+          }
+        }
+      }
     },
-    "%lld tarjetas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld cards"
+    "$": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "$"
           }
         }
       }
     },
-    "✓ Cantidad" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✓ Amount"
+    "1 · Crea la automatización": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 · Create the automation"
           }
         }
       }
     },
-    "✓ Comerciante" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "✓ Merchant"
+    "2 · Crea el atajo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 · Create the shortcut"
           }
         }
       }
     },
-    "$" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "$"
+    "3 · Conecta el Monto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3 · Wire up the Amount"
           }
         }
       }
     },
-    "1 · Crea la automatización" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 · Create the automation"
+    "4 · Conecta el Comercio": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "4 · Wire up the Merchant"
           }
         }
       }
     },
-    "2 · Crea el atajo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2 · Create the shortcut"
+    "5 · Conecta la Tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 · Connect the Card"
           }
         }
       }
     },
-    "3 · Conecta el Monto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "3 · Wire up the Amount"
+    "5 · Conecta la Tarjeta (opcional)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "5 · Wire up the Card (optional)"
           }
         }
       }
     },
-    "4 · Conecta el Comercio" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "4 · Wire up the Merchant"
+    "Abre Atajos y entra a la pestaña Automatización. Toca + para crear una nueva y elige el gatillo Wallet. Luego marca tus tarjetas y “Ejecutar inmediatamente”.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Shortcuts and go to the Automation tab. Tap + to create a new one and choose the Wallet trigger. Then select your cards and “Run Immediately”."
           }
         }
       }
     },
-    "5 · Conecta la Tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 · Connect the Card"
+    "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Wallet.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Shortcuts and go to the Automation tab.\n\nTap + (New Automation) and choose the Wallet trigger.\n\nSelect your Apple Pay cards and check Run Immediately."
           }
         }
       }
     },
-    "5 · Conecta la Tarjeta (opcional)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5 · Wire up the Card (optional)"
+    "Abre Xpense para empezar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Xpense to get started"
           }
         }
       }
     },
-    "Abre Atajos y entra a la pestaña Automatización. Toca + para crear una nueva y elige el gatillo Wallet. Luego marca tus tarjetas y “Ejecutar inmediatamente”." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Shortcuts and go to the Automation tab. Tap + to create a new one and choose the Wallet trigger. Then select your cards and “Run Immediately”."
+    "Abrir Atajos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Shortcuts"
           }
         }
       }
     },
-    "Abre Atajos y ve a la pestaña Automatización.\n\nToca + (Nueva automatización) y elige el gatillo Wallet.\n\nSelecciona tus tarjetas de Apple Pay y marca Ejecutar inmediatamente." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Shortcuts and go to the Automation tab.\n\nTap + (New Automation) and choose the Wallet trigger.\n\nSelect your Apple Pay cards and check Run Immediately."
+    "Acción “Registrar gasto”": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "“Log expense” action"
           }
         }
       }
     },
-    "Abre Xpense para empezar" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Xpense to get started"
+    "Agrega tu primer gasto con el botón +, o configura la automatización de Apple Pay en Ajustes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your first expense with the + button, or set up the Apple Pay automation in Settings."
           }
         }
       }
     },
-    "Abrir Atajos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Shortcuts"
+    "Agregada a mano": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added by hand"
           }
         }
       }
     },
-    "Acción “Registrar gasto”" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "“Log expense” action"
+    "Agregar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add"
           }
         }
       }
     },
-    "Agrega tu primer gasto con el botón +, o configura la automatización de Apple Pay en Ajustes." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add your first expense with the + button, or set up the Apple Pay automation in Settings."
+    "Agregar persona": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add person"
           }
         }
       }
     },
-    "Agregada a mano" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Added by hand"
+    "Agregar tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add card"
           }
         }
       }
     },
-    "Agregar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add"
+    "Ajustes": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         }
       }
     },
-    "Agregar persona" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add person"
+    "Al tocar Siguiente, Atajos pregunta qué ejecutar. Elige Nuevo atajo en blanco. En el editor, busca la acción Registrar gasto (aparece bajo Xpense) y agrégala.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When you tap Next, Shortcuts asks what to run. Choose New Blank Shortcut. In the editor, find the Log expense action (it appears under Xpense) and add it."
           }
         }
       }
     },
-    "Agregar tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add card"
+    "Al tocar Siguiente, Atajos te pregunta qué ejecutar.\n\nElige Nuevo atajo en blanco.\n\nEn el editor, busca la acción Registrar gasto (aparece bajo Xpense) y agrégala.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After tapping Next, Shortcuts asks what to run.\n\nChoose New Blank Automation.\n\nIn the editor, search for the Log expense action (under Xpense) and add it."
           }
         }
       }
     },
-    "Ajustes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
+    "Anotado: %@ en %@.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logged: %1$@ in %2$@."
           }
         }
       }
     },
-    "Al tocar Siguiente, Atajos pregunta qué ejecutar. Elige Nuevo atajo en blanco. En el editor, busca la acción Registrar gasto (aparece bajo Xpense) y agrégala." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "When you tap Next, Shortcuts asks what to run. Choose New Blank Shortcut. In the editor, find the Log expense action (it appears under Xpense) and add it."
+    "Aparecen solas al pagar con Apple Pay. También puedes agregarlas a mano con el botón +. Luego puedes ponerles un límite mensual.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "They show up on their own when you pay with Apple Pay. You can also add them manually with the + button. Then you can set them a monthly limit."
           }
         }
       }
     },
-    "Al tocar Siguiente, Atajos te pregunta qué ejecutar.\n\nElige Nuevo atajo en blanco.\n\nEn el editor, busca la acción Registrar gasto (aparece bajo Xpense) y agrégala." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "After tapping Next, Shortcuts asks what to run.\n\nChoose New Blank Automation.\n\nIn the editor, search for the Log expense action (under Xpense) and add it."
+    "Aparecen solas al registrar un gasto con tarjeta, o cuando configuras la captura de Apple Pay. Luego puedes ponerles un límite mensual.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "They show up on their own when you log an expense with a card, or when you set up Apple Pay capture. Then you can give them a monthly limit."
           }
         }
       }
     },
-    "Anotado: %@ en %@." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logged: %1$@ in %2$@."
+    "aporta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "contributes"
           }
         }
       }
     },
-    "Aparecen solas al pagar con Apple Pay. También puedes agregarlas a mano con el botón +. Luego puedes ponerles un límite mensual." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "They show up on their own when you pay with Apple Pay. You can also add them manually with the + button. Then you can set them a monthly limit."
+    "Aporta al pozo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contributes to the pool"
           }
         }
       }
     },
-    "Aparecen solas al registrar un gasto con tarjeta, o cuando configuras la captura de Apple Pay. Luego puedes ponerles un límite mensual." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "They show up on their own when you log an expense with a card, or when you set up Apple Pay capture. Then you can give them a monthly limit."
+    "App Atajos › pestaña Automatización": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortcuts app › Automation tab"
           }
         }
       }
     },
-    "aporta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "contributes"
+    "Asignar una tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assign a card"
           }
         }
       }
     },
-    "Aporta al pozo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Contributes to the pool"
+    "Atento por aquí: hay categorías cerca de su límite.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heads up: some categories are close to their limit."
           }
         }
       }
     },
-    "App Atajos › pestaña Automatización" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shortcuts app › Automation tab"
+    "Aún nadie aporta. Marca las tarjetas que aportan al pozo en cada persona.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No one's contributing yet. Mark the cards that go to the pool for each person."
           }
         }
       }
     },
-    "Asignar una tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Assign a card"
+    "Aún no defines límites.\nHazlo en Categorías, a tu ritmo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No limits yet.\nSet them in Categories, at your own pace."
           }
         }
       }
     },
-    "Atento por aquí: hay categorías cerca de su límite." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heads up: some categories are close to their limit."
+    "Aún no tienes tarjetas. Agrégalas en la pestaña Tarjetas, o aparecen solas al pagar con Apple Pay.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You don't have cards yet. Add them in the Cards tab, or they show up on their own when you pay with Apple Pay."
           }
         }
       }
     },
-    "Aún nadie aporta. Marca las tarjetas que aportan al pozo en cada persona." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No one's contributing yet. Mark the cards that go to the pool for each person."
+    "Automatización": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automation"
           }
         }
       }
     },
-    "Aún no defines límites.\nHazlo en Categorías, a tu ritmo." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No limits yet.\nSet them in Categories, at your own pace."
+    "Avisar al llegar al %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alert when you reach %@"
           }
         }
       }
     },
-    "Aún no tienes tarjetas. Agrégalas en la pestaña Tarjetas, o aparecen solas al pagar con Apple Pay." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You don't have cards yet. Add them in the Cards tab, or they show up on their own when you pay with Apple Pay."
+    "Bencina": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gas"
           }
         }
       }
     },
-    "Automatización" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automation"
+    "Buenas noches": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good evening"
           }
         }
       }
     },
-    "Avisar al llegar al %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alert when you reach %@"
+    "Buenas tardes": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good afternoon"
           }
         }
       }
     },
-    "Bencina" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gas"
+    "Buenos días": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good morning"
           }
         }
       }
     },
-    "Buenas noches" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Good evening"
+    "Búscala bajo “Xpense”": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find it under “Xpense”"
           }
         }
       }
     },
-    "Buenas tardes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Good afternoon"
+    "Cada gasto en Xpense lleva una tarjeta. Las de Apple Pay se crean solas con su nombre. Para gastos a mano, eliges una de la lista — y puedes agregar las tuyas con el botón + en la pestaña Tarjetas.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every expense in Xpense has a card. Apple Pay cards appear on their own with their name. For manual expenses, you pick one from the list — and you can add your own with the + button in the Cards tab."
           }
         }
       }
     },
-    "Buenos días" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Good morning"
+    "Cancelar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
           }
         }
       }
     },
-    "Búscala bajo “Xpense”" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Find it under “Xpense”"
+    "Captura automática con Apple Pay": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic Apple Pay capture"
           }
         }
       }
     },
-    "Cada gasto en Xpense lleva una tarjeta. Las de Apple Pay se crean solas con su nombre. Para gastos a mano, eliges una de la lista — y puedes agregar las tuyas con el botón + en la pestaña Tarjetas." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Every expense in Xpense has a card. Apple Pay cards appear on their own with their name. For manual expenses, you pick one from the list — and you can add your own with the + button in the Cards tab."
+    "Categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category"
           }
         }
       }
     },
-    "Cancelar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
+    "Categorías": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categories"
           }
         }
       }
     },
-    "Captura automática con Apple Pay" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatic Apple Pay capture"
+    "Cerrar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
           }
         }
       }
     },
-    "Categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Category"
+    "Color": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Color"
           }
         }
       }
     },
-    "Categorías" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Categories"
+    "Comercio": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merchant"
           }
         }
       }
     },
-    "Cerrar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Close"
+    "Comercio o categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Merchant or category"
           }
         }
       }
     },
-    "Color" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Color"
+    "Compartir": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
           }
         }
       }
     },
-    "Comercio" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Merchant"
+    "Compras": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shopping"
           }
         }
       }
     },
-    "Comercio o categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Merchant or category"
+    "Con el botón + arriba": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With the + button above"
           }
         }
       }
     },
-    "Compartir" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Share"
+    "Con gastos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With expenses"
           }
         }
       }
     },
-    "Compras" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shopping"
+    "Consumo por categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spending by category"
           }
         }
       }
     },
-    "Con el botón + arriba" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "With the + button above"
+    "Crea un grupo (familia, arrendatarios…) para juntar los gastos de varias personas en un pozo común.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create a group (family, housemates…) to pool expenses from multiple people into a common pool."
           }
         }
       }
     },
-    "Con gastos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "With expenses"
+    "Crear": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create"
           }
         }
       }
     },
-    "Consumo por categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spending by category"
+    "Crear grupo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create group"
           }
         }
       }
     },
-    "Crea un grupo (familia, arrendatarios…) para juntar los gastos de varias personas en un pozo común." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create a group (family, housemates…) to pool expenses from multiple people into a common pool."
+    "Cuentas y servicios": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bills & utilities"
           }
         }
       }
     },
-    "Crear" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create"
+    "de %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "of %@"
           }
         }
       }
     },
-    "Crear grupo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create group"
+    "Definir un límite": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Set a limit"
           }
         }
       }
     },
-    "Cuentas y servicios" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bills & utilities"
+    "Desde ahora, cada pago con Apple Pay queda registrado y categorizado solo.\n\nPuedes volver a ver esta guía cuando quieras en Ajustes.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From now on, every Apple Pay purchase is logged and categorized on its own.\n\nYou can revisit this guide anytime in Settings."
           }
         }
       }
     },
-    "de %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "of %@"
+    "Editar gasto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit expense"
           }
         }
       }
     },
-    "Definir un límite" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Set a limit"
+    "Ej: Jumbo, Copec, Uber…": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Jumbo, Copec, Uber…"
           }
         }
       }
     },
-    "Desde ahora, cada pago con Apple Pay queda registrado y categorizado solo.\n\nPuedes volver a ver esta guía cuando quieras en Ajustes." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "From now on, every Apple Pay purchase is logged and categorized on its own.\n\nYou can revisit this guide anytime in Settings."
+    "Ej: Mascotas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "e.g. Pets"
           }
         }
       }
     },
-    "Editar gasto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit expense"
+    "El interruptor de la derecha marca si los gastos de esa tarjeta aportan al pozo común. Desliza una tarjeta para quitarla del grupo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The toggle on the right marks whether that card's expenses go to the common pool. Swipe a card to remove it from the group."
           }
         }
       }
     },
-    "Ej: Jumbo, Copec, Uber…" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e.g. Jumbo, Copec, Uber…"
+    "Elige este gatillo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose this trigger"
           }
         }
       }
     },
-    "Ej: Mascotas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "e.g. Pets"
+    "Elige qué ejecutar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose what to run"
           }
         }
       }
     },
-    "El interruptor de la derecha marca si los gastos de esa tarjeta aportan al pozo común. Desliza una tarjeta para quitarla del grupo." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The toggle on the right marks whether that card's expenses go to the common pool. Swipe a card to remove it from the group."
+    "Elige una tarjeta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose a card"
           }
         }
       }
     },
-    "Elige este gatillo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choose this trigger"
+    "Eliminar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
           }
         }
       }
     },
-    "Elige qué ejecutar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choose what to run"
+    "Eliminar categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete category"
           }
         }
       }
     },
-    "Elige una tarjeta" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choose a card"
+    "Eliminar gasto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete expense"
           }
         }
       }
     },
-    "Eliminar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete"
+    "Eliminar grupo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete group"
           }
         }
       }
     },
-    "Eliminar categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete category"
+    "Eliminar tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete card"
           }
         }
       }
     },
-    "Eliminar gasto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete expense"
+    "Entendido": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Got it"
           }
         }
       }
     },
-    "Eliminar grupo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete group"
+    "Entrada del atajo › Cantidad": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortcut Input › Amount"
           }
         }
       }
     },
-    "Eliminar tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete card"
+    "Entrada del atajo › Comerciante": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortcut Input › Merchant"
           }
         }
       }
     },
-    "Entendido" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Got it"
+    "Entrada del atajo › Tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortcut Input › Card"
           }
         }
       }
     },
-    "Entrada del atajo › Cantidad" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shortcut Input › Amount"
+    "Entretenimiento": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entertainment"
           }
         }
       }
     },
-    "Entrada del atajo › Comerciante" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shortcut Input › Merchant"
+    "Esta acción no se puede deshacer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This action cannot be undone."
           }
         }
       }
     },
-    "Entrada del atajo › Tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shortcut Input › Card"
+    "esta semana": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "this week"
           }
         }
       }
     },
-    "Entretenimiento" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entertainment"
+    "Este grupo ya se comparte. Vuelve a tocar para gestionar a quién invitaste.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This group is already shared. Tap again to manage who you invited."
           }
         }
       }
     },
-    "Esta acción no se puede deshacer." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This action cannot be undone."
+    "este mes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "this month"
           }
         }
       }
     },
-    "esta semana" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "this week"
+    "Fecha": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
           }
         }
       }
     },
-    "Este grupo ya se comparte. Vuelve a tocar para gestionar a quién invitaste." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This group is already shared. Tap again to manage who you invited."
+    "Gastado esta semana": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spent this week"
           }
         }
       }
     },
-    "este mes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "this month"
+    "Gastado este mes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spent this month"
           }
         }
       }
     },
-    "Fecha" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date"
+    "GASTADO ESTE MES": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SPENT THIS MONTH"
           }
         }
       }
     },
-    "Gastado esta semana" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spent this week"
+    "Gastos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Expenses"
           }
         }
       }
     },
-    "Gastado este mes" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spent this month"
+    "Grupo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Group"
           }
         }
       }
     },
-    "GASTADO ESTE MES" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SPENT THIS MONTH"
+    "Grupos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Groups"
           }
         }
       }
     },
-    "Gastos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expenses"
+    "Guardar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
           }
         }
       }
     },
-    "Grupo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Group"
+    "Hogar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
           }
         }
       }
     },
-    "Grupos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Groups"
+    "iCloud todavía se está preparando. Intenta de nuevo en unos segundos.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iCloud is still getting ready. Try again in a few seconds."
           }
         }
       }
     },
-    "Guardar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save"
+    "Ícono": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon"
           }
         }
       }
     },
-    "Hogar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
+    "Inicio": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
           }
         }
       }
     },
-    "iCloud todavía se está preparando. Intenta de nuevo en unos segundos." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iCloud is still getting ready. Try again in a few seconds."
+    "Invita a otras personas por iCloud para que vean el pozo común en sus equipos. Cada quien edita solo sus gastos.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite other people over iCloud so they see the shared pool on their devices. Each person edits only their own expenses."
           }
         }
       }
     },
-    "Ícono" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
+    "Invitar personas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invite people"
           }
         }
       }
     },
-    "Inicio" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Home"
+    "iOS no permite a las apps leer tus pagos directamente, pero Atajos sí puede avisarle a Xpense cada vez que pagas. Se configura una sola vez.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS doesn't let apps read your payments directly, but Shortcuts can tell Xpense every time you pay. You only set it up once."
           }
         }
       }
     },
-    "Invita a otras personas por iCloud para que vean el pozo común en sus equipos. Cada quien edita solo sus gastos." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invite other people over iCloud so they see the shared pool on their devices. Each person edits only their own expenses."
+    "Las tarjetas no se borran; solo dejan de pertenecer a una persona.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards aren't deleted; they just stop belonging to a person."
           }
         }
       }
     },
-    "Invitar personas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Invite people"
+    "Límite": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limit"
           }
         }
       }
     },
-    "iOS no permite a las apps leer tus pagos directamente, pero Atajos sí puede avisarle a Xpense cada vez que pagas. Se configura una sola vez." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS doesn't let apps read your payments directly, but Shortcuts can tell Xpense every time you pay. You only set it up once."
+    "Límite mensual": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly limit"
           }
         }
       }
     },
-    "Las tarjetas no se borran; solo dejan de pertenecer a una persona." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cards aren't deleted; they just stop belonging to a person."
+    "Listo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
           }
         }
       }
     },
-    "Límite" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Limit"
+    "Llevas %@ de %@ %@. Aún hay espacio — respira.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've spent %1$@ of %2$@ %3$@. There's still room — breathe."
           }
         }
       }
     },
-    "Límite mensual" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monthly limit"
+    "Llevas %@ de %@ %@. Sin culpa: obsérvalo y sigue.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've spent %1$@ of %2$@ %3$@. No guilt: notice it and move on."
           }
         }
       }
     },
-    "Listo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Done"
+    "Llevas %@ de %@ este mes en %@. Aún hay espacio — respira.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've spent %1$@ of %2$@ this month on %3$@. There's still room — breathe."
           }
         }
       }
     },
-    "Llevas %@ de %@ %@. Aún hay espacio — respira." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You've spent %1$@ of %2$@ %3$@. There's still room — breathe."
+    "Llevas %@ de %@ este mes en %@. Sin culpa: obsérvalo y sigue.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You've spent %1$@ of %2$@ this month on %3$@. No guilt: notice it and move on."
           }
         }
       }
     },
-    "Llevas %@ de %@ %@. Sin culpa: obsérvalo y sigue." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You've spent %1$@ of %2$@ %3$@. No guilt: notice it and move on."
+    "Los gastos de esta categoría no se borran: quedan sin categoría.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The expenses in this category aren't deleted: they become uncategorized."
           }
         }
       }
     },
-    "Llevas %@ de %@ este mes en %@. Aún hay espacio — respira." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You've spent %1$@ of %2$@ this month on %3$@. There's still room — breathe."
+    "Los gastos de esta categoría quedan sin categoría. Esto no se puede deshacer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The expenses in this category become uncategorized. This can't be undone."
           }
         }
       }
     },
-    "Llevas %@ de %@ este mes en %@. Sin culpa: obsérvalo y sigue." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You've spent %1$@ of %2$@ this month on %3$@. No guilt: notice it and move on."
+    "Los gastos de la tarjeta no se borran; solo dejan de tener tarjeta.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The card's expenses aren't deleted; they just lose their card."
           }
         }
       }
     },
-    "Los gastos de esta categoría no se borran: quedan sin categoría." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The expenses in this category aren't deleted: they become uncategorized."
+    "Mensaje": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Message"
           }
         }
       }
     },
-    "Los gastos de esta categoría quedan sin categoría. Esto no se puede deshacer." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The expenses in this category become uncategorized. This can't be undone."
+    "Mensual": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monthly"
           }
         }
       }
     },
-    "Los gastos de la tarjeta no se borran; solo dejan de tener tarjeta." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The card's expenses aren't deleted; they just lose their card."
+    "Mirar tus gastos sin apuro ni culpa.\nHecho para Chile. 🌿": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Watch your spending without rush or guilt.\nMade for Chile. 🌿"
           }
         }
       }
     },
-    "Mensaje" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Message"
+    "Misma acción": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Same action"
           }
         }
       }
     },
-    "Mensual" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monthly"
+    "Monto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amount"
           }
         }
       }
     },
-    "Mirar tus gastos sin apuro ni culpa.\nHecho para Chile. 🌿" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Watch your spending without rush or guilt.\nMade for Chile. 🌿"
+    "Monto (CLP)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Amount (CLP)"
           }
         }
       }
     },
-    "Misma acción" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Same action"
+    "Movimientos del mes": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This month's expenses"
           }
         }
       }
     },
-    "Monto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amount"
+    "Movimientos del periodo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This period's expenses"
           }
         }
       }
     },
-    "Monto (CLP)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Amount (CLP)"
+    "Nada por aquí todavía.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing here yet."
           }
         }
       }
     },
-    "Movimientos del mes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This month's expenses"
+    "Ninguna": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None"
           }
         }
       }
     },
-    "Movimientos del periodo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This period's expenses"
+    "No": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
           }
         }
       }
     },
-    "Nada por aquí todavía." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nothing here yet."
+    "no aporta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "doesn't contribute"
           }
         }
       }
     },
-    "Ninguna" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "None"
+    "No hay tarjetas para asignar. Créalas en la pestaña Tarjetas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cards to assign. Create them in the Cards tab."
           }
         }
       }
     },
-    "No" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No"
+    "No se pudo compartir": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Couldn't share"
           }
         }
       }
     },
-    "no aporta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "doesn't contribute"
+    "Nombre": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
           }
         }
       }
     },
-    "No hay tarjetas para asignar. Créalas en la pestaña Tarjetas." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No cards to assign. Create them in the Cards tab."
+    "Nombre (ej: Casa, Familia)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (e.g. Home, Family)"
           }
         }
       }
     },
-    "No se pudo compartir" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Couldn't share"
+    "Nombre (ej: Visa de mamá)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name (e.g. Mom's Visa)"
           }
         }
       }
     },
-    "Nombre" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
+    "Nombre e ícono": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name and icon"
           }
         }
       }
     },
-    "Nombre (ej: Casa, Familia)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name (e.g. Home, Family)"
+    "Notificaciones": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
           }
         }
       }
     },
-    "Nombre (ej: Visa de mamá)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name (e.g. Mom's Visa)"
+    "Nueva automatización": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New automation"
           }
         }
       }
     },
-    "Nombre e ícono" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name and icon"
+    "Nueva categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New category"
           }
         }
       }
     },
-    "Notificaciones" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifications"
+    "Nueva persona": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New person"
           }
         }
       }
     },
-    "Nueva automatización" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New automation"
+    "Nueva tarjeta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New card"
           }
         }
       }
     },
-    "Nueva categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New category"
+    "Nuevo atajo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New shortcut"
           }
         }
       }
     },
-    "Nueva persona" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New person"
+    "Nuevo atajo en blanco": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New blank shortcut"
           }
         }
       }
     },
-    "Nueva tarjeta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New card"
+    "Nuevo gasto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New expense"
           }
         }
       }
     },
-    "Nuevo atajo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New shortcut"
+    "Nuevo grupo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New group"
           }
         }
       }
     },
-    "Nuevo atajo en blanco" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New blank shortcut"
+    "Otros": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
           }
         }
       }
     },
-    "Nuevo gasto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New expense"
+    "Periodo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Period"
           }
         }
       }
     },
-    "Nuevo grupo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New group"
+    "Personas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "People"
           }
         }
       }
     },
-    "Otros" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Other"
+    "Ponle un nombre para reconocerla. Las de Apple Pay se crean solas.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Give it a name to recognize it. Apple Pay cards create themselves."
           }
         }
       }
     },
-    "Periodo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Period"
+    "Por defecto, esta tarjeta %@ al pozo. Puedes cambiarlo solo para este gasto.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "By default, this card %@ to the pool. You can change it just for this expense."
           }
         }
       }
     },
-    "Personas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "People"
+    "POZO COMÚN ESTE MES": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "COMMON POOL THIS MONTH"
           }
         }
       }
     },
-    "Ponle un nombre para reconocerla. Las de Apple Pay se crean solas." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Give it a name to recognize it. Apple Pay cards create themselves."
+    "Pozo del grupo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Group pool"
           }
         }
       }
     },
-    "Por defecto, esta tarjeta %@ al pozo. Puedes cambiarlo solo para este gasto." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "By default, this card %@ to the pool. You can change it just for this expense."
+    "Quién aporta": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Who contributes"
           }
         }
       }
     },
-    "POZO COMÚN ESTE MES" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "COMMON POOL THIS MONTH"
+    "Quitar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
           }
         }
       }
     },
-    "Pozo del grupo" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Group pool"
+    "Registra un gasto en Xpense. Pensado para la automatización de pagos en Atajos.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logs an expense in Xpense. Built for the payments automation in Shortcuts."
           }
         }
       }
     },
-    "Quién aporta" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Who contributes"
+    "Registrar ${monto} en ${comercio}": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log ${monto} at ${comercio}"
           }
         }
       }
     },
-    "Quitar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove"
+    "Registrar ${monto} en ${comercio} con ${tarjeta}": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log ${monto} at ${comercio} with ${tarjeta}"
           }
         }
       }
     },
-    "Registra un gasto en Xpense. Pensado para la automatización de pagos en Atajos." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logs an expense in Xpense. Built for the payments automation in Shortcuts."
+    "Registrar gasto": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log expense"
           }
         }
       }
     },
-    "Registrar ${monto} en ${comercio}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Log ${monto} at ${comercio}"
+    "Registrar gasto en ${applicationName}": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log expense in ${applicationName}"
           }
         }
       }
     },
-    "Registrar ${monto} en ${comercio} con ${tarjeta}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Log ${monto} at ${comercio} with ${tarjeta}"
+    "Repite con el campo Comercio: toca el campo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat with the Merchant field: tap the field, pick Shortcut Input from the bar, tap the variable again and choose Merchant."
           }
         }
       }
     },
-    "Registrar gasto" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Log expense"
+    "Repite con el campo Comercio: toca el campo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante.\n\nFinalmente toca Listo para guardar la automatización.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat with the Merchant field: tap the field, pick Shortcut Input from the bar, tap the variable again and choose Merchant.\n\nFinally tap Done to save the automation."
           }
         }
       }
     },
-    "Registrar gasto en ${applicationName}" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Log expense in ${applicationName}"
+    "Repite con el campo Comercio: tócalo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat with the Merchant field: tap it, choose Shortcut Input in the bar, tap the variable again and choose Merchant."
           }
         }
       }
     },
-    "Repite con el campo Comercio: toca el campo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeat with the Merchant field: tap the field, pick Shortcut Input from the bar, tap the variable again and choose Merchant."
+    "Repite en el campo Tarjeta: tócalo, elige Entrada del atajo y luego el subcampo Tarjeta. Finalmente toca Listo para guardar la automatización.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat with the Card field: tap it, choose Shortcut Input and then the Card subfield. Finally tap Done to save the automation."
           }
         }
       }
     },
-    "Repite con el campo Comercio: toca el campo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante.\n\nFinalmente toca Listo para guardar la automatización." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeat with the Merchant field: tap the field, pick Shortcut Input from the bar, tap the variable again and choose Merchant.\n\nFinally tap Done to save the automation."
+    "Restaurantes y café": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restaurants & cafés"
           }
         }
       }
     },
-    "Repite con el campo Comercio: tócalo, elige Entrada del atajo en la barra, toca la variable otra vez y elige Comerciante." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeat with the Merchant field: tap it, choose Shortcut Input in the bar, tap the variable again and choose Merchant."
+    "Revisar permiso de notificaciones": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review notification permission"
           }
         }
       }
     },
-    "Repite en el campo Tarjeta: tócalo, elige Entrada del atajo y luego el subcampo Tarjeta. Finalmente toca Listo para guardar la automatización." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeat with the Card field: tap it, choose Shortcut Input and then the Card subfield. Finally tap Done to save the automation."
+    "Saltar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
           }
         }
       }
     },
-    "Restaurantes y café" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurants & cafés"
+    "Salud": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Health"
           }
         }
       }
     },
-    "Revisar permiso de notificaciones" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Review notification permission"
+    "Se creó sola al pagar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Created on its own when paying"
           }
         }
       }
     },
-    "Saltar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skip"
+    "Se eliminan el grupo y sus personas. Las tarjetas y gastos se conservan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The group and its people are deleted. Cards and expenses are kept."
           }
         }
       }
     },
-    "Salud" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Health"
+    "Se guardan en tu iPhone y se sincronizan con tu iCloud privado. Nadie más los ve — ni nosotros.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stored on your iPhone and synced to your private iCloud. No one else sees it — not even us."
           }
         }
       }
     },
-    "Se creó sola al pagar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Created on its own when paying"
+    "Según la tarjeta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "By card"
           }
         }
       }
     },
-    "Se eliminan el grupo y sus personas. Las tarjetas y gastos se conservan." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The group and its people are deleted. Cards and expenses are kept."
+    "Semanal": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly"
           }
         }
       }
     },
-    "Se guardan en tu iPhone y se sincronizan con tu iCloud privado. Nadie más los ve — ni nosotros." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stored on your iPhone and synced to your private iCloud. No one else sees it — not even us."
+    "Sí": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yes"
           }
         }
       }
     },
-    "Según la tarjeta" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "By card"
+    "Si quieres llevar el gasto por tarjeta, repite en el campo Tarjeta: tócalo, elige Entrada del atajo y luego el subcampo Tarjeta.\n\nFinalmente toca Listo para guardar la automatización.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you want to track spending by card, repeat with the Card field: tap it, pick Shortcut Input and then the Card subfield.\n\nFinally tap Done to save the automation."
           }
         }
       }
     },
-    "Semanal" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly"
+    "Siguiente": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
           }
         }
       }
     },
-    "Sí" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yes"
+    "Sin categoría": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No category"
           }
         }
       }
     },
-    "Si quieres llevar el gasto por tarjeta, repite en el campo Tarjeta: tócalo, elige Entrada del atajo y luego el subcampo Tarjeta.\n\nFinalmente toca Listo para guardar la automatización." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "If you want to track spending by card, repeat with the Card field: tap it, pick Shortcut Input and then the Card subfield.\n\nFinally tap Done to save the automation."
+    "Sin comercio": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No merchant"
           }
         }
       }
     },
-    "Siguiente" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
+    "Sin gastos aún": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No expenses yet"
           }
         }
       }
     },
-    "Sin categoría" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No category"
+    "Sin grupos aún": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No groups yet"
           }
         }
       }
     },
-    "Sin comercio" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No merchant"
+    "sin límite": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "no limit"
           }
         }
       }
     },
-    "Sin gastos aún" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No expenses yet"
+    "Sin movimientos aún": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No expenses yet"
           }
         }
       }
     },
-    "Sin grupos aún" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No groups yet"
+    "Sin tarjetas aún": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No cards yet"
           }
         }
       }
     },
-    "sin límite" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "no limit"
+    "Soy yo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That's me"
           }
         }
       }
     },
-    "Sin movimientos aún" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No expenses yet"
+    "Sugerida según el comercio": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suggested from the merchant"
           }
         }
       }
     },
-    "Sin tarjetas aún" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No cards yet"
+    "Superaste el límite de %@": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You went over the %@ limit"
           }
         }
       }
     },
-    "Soy yo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "That's me"
+    "Supermercado": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Groceries"
           }
         }
       }
     },
-    "Sugerida según el comercio" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suggested from the merchant"
+    "Tarjeta": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card"
           }
         }
       }
     },
-    "Superaste el límite de %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You went over the %@ limit"
+    "Tarjeta (opcional)": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Card (optional)"
           }
         }
       }
     },
-    "Supermercado" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Groceries"
+    "Tarjeta de mamá": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mom's card"
           }
         }
       }
     },
-    "Tarjeta" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Card"
+    "Tarjetas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cards"
           }
         }
       }
     },
-    "Tarjeta (opcional)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Card (optional)"
+    "Tarjetas de %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@'s cards"
           }
         }
       }
     },
-    "Tarjeta de mamá" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mom's card"
+    "Te acercas al límite de %@": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You're nearing the %@ limit"
           }
         }
       }
     },
-    "Tarjetas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cards"
+    "Toca el campo Monto (CLP) de la acción.\n\nEn la barra que aparece sobre el teclado, desliza hacia el lado hasta encontrar la variable Entrada del atajo y tócala.\n\nLuego toca esa misma variable (el recuadro azul) otra vez y elige Cantidad.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the action's Amount (CLP) field.\n\nIn the bar above the keyboard, swipe sideways until you find the Shortcut Input variable and tap it.\n\nThen tap that same variable (the blue token) again and choose Amount."
           }
         }
       }
     },
-    "Tarjetas de %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@'s cards"
+    "Toca el campo Monto (CLP). En la barra sobre el teclado desliza hasta Entrada del atajo y tócala; luego toca esa variable azul otra vez y elige Cantidad.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap the Amount (CLP) field. In the bar above the keyboard, swipe to Shortcut Input and tap it; then tap that blue variable again and choose Amount."
           }
         }
       }
     },
-    "Te acercas al límite de %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "You're nearing the %@ limit"
+    "Tócalo para empezar": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap it to start"
           }
         }
       }
     },
-    "Toca el campo Monto (CLP) de la acción.\n\nEn la barra que aparece sobre el teclado, desliza hacia el lado hasta encontrar la variable Entrada del atajo y tócala.\n\nLuego toca esa misma variable (el recuadro azul) otra vez y elige Cantidad." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap the action's Amount (CLP) field.\n\nIn the bar above the keyboard, swipe sideways until you find the Shortcut Input variable and tap it.\n\nThen tap that same variable (the blue token) again and choose Amount."
+    "Transporte": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Transport"
           }
         }
       }
     },
-    "Toca el campo Monto (CLP). En la barra sobre el teclado desliza hasta Entrada del atajo y tócala; luego toca esa variable azul otra vez y elige Cantidad." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap the Amount (CLP) field. In the bar above the keyboard, swipe to Shortcut Input and tap it; then tap that blue variable again and choose Amount."
+    "tú": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "you"
           }
         }
       }
     },
-    "Tócalo para empezar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap it to start"
+    "Tu %@, en calma": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your %@, at ease"
           }
         }
       }
     },
-    "Transporte" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transport"
+    "Tu categoría": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your category"
           }
         }
       }
     },
-    "tú" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "you"
+    "Tus datos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your data"
           }
         }
       }
     },
-    "Tu %@, en calma" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your %@, at ease"
+    "Tus límites": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your limits"
           }
         }
       }
     },
-    "Tu categoría" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your category"
+    "Tus límites y lo que llevas gastado, de un vistazo.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your limits and what you've spent, at a glance."
           }
         }
       }
     },
-    "Tus datos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your data"
+    "Tus pagos se anotan solos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your payments log themselves"
           }
         }
       }
     },
-    "Tus límites" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your limits"
+    "Tus tarjetas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your cards"
           }
         }
       }
     },
-    "Tus límites y lo que llevas gastado, de un vistazo." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your limits and what you've spent, at a glance."
+    "Último campo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last field"
           }
         }
       }
     },
-    "Tus pagos se anotan solos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your payments log themselves"
+    "Últimos movimientos": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recent expenses"
           }
         }
       }
     },
-    "Tus tarjetas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your cards"
+    "Un límite se pasó — sin drama, mañana es otro día.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A limit was passed — no drama, tomorrow is another day."
           }
         }
       }
     },
-    "Último campo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Last field"
+    "Vas con calma este mes.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All calm this month."
           }
         }
       }
     },
-    "Últimos movimientos" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Recent expenses"
+    "Ver tutorial paso a paso": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "View the step-by-step tutorial"
           }
         }
       }
     },
-    "Un límite se pasó — sin drama, mañana es otro día." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A limit was passed — no drama, tomorrow is another day."
+    "Visa ·· 4321": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visa ·· 4321"
           }
         }
       }
     },
-    "Vas con calma este mes." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All calm this month."
+    "Wallet": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wallet"
           }
         }
       }
     },
-    "Ver tutorial paso a paso" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "View the step-by-step tutorial"
+    "Xpense": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xpense"
           }
         }
       }
     },
-    "Visa ·· 4321" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Visa ·· 4321"
+    "Xpense › pestaña Tarjetas": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xpense › Cards tab"
           }
         }
       }
     },
-    "Wallet" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wallet"
+    "Xpense te avisa con calma cuando una categoría se acerca a su límite. El umbral se ajusta en cada categoría.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xpense gently lets you know when a category nears its limit. The threshold is set per category."
           }
         }
       }
     },
-    "Xpense" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xpense"
+    "Xpense usa la app Atajos de Apple para enterarse de cada pago con Apple Pay y registrarlo en segundo plano, sin abrir la app.\n\nConfigurarlo toma unos minutos y se hace una sola vez.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xpense uses Apple's Shortcuts app to find out about every Apple Pay purchase and log it in the background, without opening the app.\n\nIt takes a few minutes and you only do it once."
           }
         }
       }
     },
-    "Xpense › pestaña Tarjetas" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xpense › Cards tab"
+    "Xpense usa la app Atajos de Apple para enterarse de cada pago con Apple Pay y registrarlo en segundo plano, sin abrir la app.\n\nConfigurarlo toma unos minutos y se hace una sola vez. Te guiamos pantalla por pantalla.": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xpense uses Apple’s Shortcuts app to learn about each Apple Pay payment and log it in the background, without opening the app.\n\nSetting it up takes a few minutes and is done just once. We’ll guide you screen by screen."
           }
         }
       }
     },
-    "Xpense te avisa con calma cuando una categoría se acerca a su límite. El umbral se ajusta en cada categoría." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xpense gently lets you know when a category nears its limit. The threshold is set per category."
+    "Yo": {
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Me"
           }
         }
       }
     },
-    "Xpense usa la app Atajos de Apple para enterarse de cada pago con Apple Pay y registrarlo en segundo plano, sin abrir la app.\n\nConfigurarlo toma unos minutos y se hace una sola vez." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xpense uses Apple's Shortcuts app to find out about every Apple Pay purchase and log it in the background, without opening the app.\n\nIt takes a few minutes and you only do it once."
+    "Compartidos conmigo": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared with me"
           }
         }
       }
     },
-    "Xpense usa la app Atajos de Apple para enterarse de cada pago con Apple Pay y registrarlo en segundo plano, sin abrir la app.\n\nConfigurarlo toma unos minutos y se hace una sola vez. Te guiamos pantalla por pantalla." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Xpense uses Apple’s Shortcuts app to learn about each Apple Pay payment and log it in the background, without opening the app.\n\nSetting it up takes a few minutes and is done just once. We’ll guide you screen by screen."
+    "dueño": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "owner"
           }
         }
       }
     },
-    "Yo" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Me"
+    "Aún nadie aporta a este pozo.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No one is contributing to this pool yet."
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }
