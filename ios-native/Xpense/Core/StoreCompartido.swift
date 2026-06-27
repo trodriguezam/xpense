@@ -103,6 +103,28 @@ final class StoreCompartido {
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
     }
 
+    #if DEBUG
+    /// Solo desarrollo: despliega el esquema (tipos de registro + infra de sharing)
+    /// al contenedor de CloudKit. Hace falta una vez; si el esquema no está bien
+    /// desplegado, el store compartido del invitado no puede crear las zonas al
+    /// aceptar y falla con "Failed to modify some record zones". Idempotente por
+    /// dispositivo (flag en UserDefaults).
+    func inicializarEsquemaSiHaceFalta() {
+        let clave = "esquemaGruposInicializado.v1"
+        guard !UserDefaults.standard.bool(forKey: clave) else { return }
+        let cont = container
+        Task.detached {
+            do {
+                try cont.initializeCloudKitSchema(options: [])
+                UserDefaults.standard.set(true, forKey: clave)
+                print("XPDBG initializeCloudKitSchema OK")
+            } catch {
+                print("XPDBG initializeCloudKitSchema ERROR: \(error)")
+            }
+        }
+    }
+    #endif
+
     /// Espera (con timeout) a que el mirroring de CloudKit esté listo para compartir.
     /// Devuelve `true` si quedó listo. Evita el `fatalError` de `container.share`
     /// cuando se toca "Invitar" justo al abrir la app, antes de que CloudKit arranque.

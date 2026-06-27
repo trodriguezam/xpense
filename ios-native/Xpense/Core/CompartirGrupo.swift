@@ -9,6 +9,12 @@ import Foundation
 import CloudKit
 import os
 
+extension Notification.Name {
+    /// Se emite cuando se acepta una invitación a un grupo compartido, para que la
+    /// UI salte a la pestaña Grupos y muestre el grupo recién aceptado.
+    static let grupoCompartidoAceptado = Notification.Name("grupoCompartidoAceptado")
+}
+
 enum CompartirGrupo {
     private static let log = Logger(subsystem: "cl.trodriguezam.xpense", category: "CompartirGrupo")
 
@@ -20,16 +26,24 @@ enum CompartirGrupo {
     /// link del CKShare). Usa la API oficial de NSPersistentCloudKitContainer, que
     /// inserta la zona compartida en el store compartido y la sincroniza.
     static func aceptarInvitacion(_ metadata: CKShare.Metadata) {
+        print("XPDBG aceptarInvitacion: inicio; container=\(metadata.containerIdentifier)")
         let store = StoreCompartido.shared
         guard let tienda = store.tiendaCompartida else {
+            print("XPDBG aceptarInvitacion: NO hay tiendaCompartida")
             log.error("No hay tienda compartida cargada para aceptar la invitación.")
             return
         }
+        print("XPDBG aceptarInvitacion: tiendaCompartida OK; llamando acceptShareInvitations")
         store.container.acceptShareInvitations(from: [metadata], into: tienda) { _, error in
             if let error {
+                print("XPDBG aceptarInvitacion: ERROR \(error)")
                 log.error("acceptShareInvitations falló: \(error.localizedDescription, privacy: .public)")
             } else {
+                print("XPDBG aceptarInvitacion: ACEPTADA OK")
                 log.info("Invitación a grupo compartido aceptada.")
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: .grupoCompartidoAceptado, object: nil)
+                }
             }
         }
     }

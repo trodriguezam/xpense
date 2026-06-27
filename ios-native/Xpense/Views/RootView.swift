@@ -5,19 +5,30 @@ struct RootView: View {
     @Environment(\.modelContext) private var contexto
     @AppStorage("tutorialVisto") private var tutorialVisto = false
     @State private var mostrarTutorial = false
+    @State private var tabSeleccionado = 0
 
     var body: some View {
-        TabView {
+        TabView(selection: $tabSeleccionado) {
             HomeView()
+                .tag(0)
                 .tabItem { Label("Inicio", systemImage: "leaf.fill") }
             TransaccionesView()
+                .tag(1)
                 .tabItem { Label("Gastos", systemImage: "list.bullet") }
             CategoriasView()
+                .tag(2)
                 .tabItem { Label("Categorías", systemImage: "circle.grid.2x2.fill") }
             TarjetasView()
+                .tag(3)
                 .tabItem { Label("Tarjetas", systemImage: "creditcard.fill") }
             GruposView()
+                .tag(4)
                 .tabItem { Label("Grupos", systemImage: "person.2.fill") }
+        }
+        // Al aceptar una invitación a un grupo, saltar a la pestaña Grupos para
+        // que la persona vea de inmediato el grupo compartido.
+        .onReceive(NotificationCenter.default.publisher(for: .grupoCompartidoAceptado)) { _ in
+            tabSeleccionado = 4
         }
         .sheet(isPresented: $mostrarTutorial, onDismiss: {
             tutorialVisto = true
@@ -33,6 +44,9 @@ struct RootView: View {
             // (si no, `container.share` se llama con el mirroring a medio iniciar y
             // el framework hace fatalError). Ver `StoreCompartido.esperarMirroring`.
             _ = StoreCompartido.shared
+            #if DEBUG
+            StoreCompartido.shared.inicializarEsquemaSiHaceFalta()
+            #endif
             // Poblar el widget de inmediato: no debe quedar a la espera de que el
             // usuario responda el diálogo de permiso de notificaciones.
             SnapshotWidget.escribir(contexto: contexto)

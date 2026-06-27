@@ -55,6 +55,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCent
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
+        print("XPDBG scene willConnectTo, metadata=\(connectionOptions.cloudKitShareMetadata != nil)")
         if let metadata = connectionOptions.cloudKitShareMetadata {
             CompartirGrupo.aceptarInvitacion(metadata)
         }
@@ -62,6 +63,7 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     func windowScene(_ windowScene: UIWindowScene,
                      userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShare.Metadata) {
+        print("XPDBG userDidAcceptCloudKitShareWith FIRED")
         CompartirGrupo.aceptarInvitacion(cloudKitShareMetadata)
     }
 }

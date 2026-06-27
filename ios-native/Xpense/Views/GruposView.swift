@@ -115,7 +115,12 @@ struct GruposView: View {
         let req = NSFetchRequest<GrupoCompartidoMO>(entityName: "GrupoCompartido")
         let todos = (try? ctx.fetch(req)) ?? []
         let tienda = StoreCompartido.shared.tiendaCompartida
+        print("XPDBG recargar: total=\(todos.count) tiendaCompartida=\(tienda?.url?.lastPathComponent ?? "nil")")
+        for g in todos {
+            print("XPDBG   g='\(g.nombre ?? "nil")' store=\(g.objectID.persistentStore?.url?.lastPathComponent ?? "nil")")
+        }
         compartidos = todos.filter { $0.objectID.persistentStore === tienda }
+        print("XPDBG recargar: filtrados=\(compartidos.count)")
     }
 
     private func crearGrupo() {
